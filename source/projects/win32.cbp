@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Nullocity (ubu32)" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="..\..\nullocity-win32-debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="..\.." />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="..\..\nullocity-win32" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="..\.." />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-mwindows" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory=".." />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDLmain" />
+			<Add library="SDL_image" />
+			<Add library="SDL_ttf" />
+			<Add library="SDL_mixer" />
+			<Add library="SDL_net" />
+			<Add library="SDL" />
+			<Add library="opengl32" />
+			<Add library="lua51" />
+		</Linker>
+		<Unit filename="..\CGE\ClusterVBO.h" />
+		<Unit filename="..\CGE\CubeMap.cpp" />
+		<Unit filename="..\CGE\CubeMap.h" />
+		<Unit filename="..\CGE\Engine.cpp" />
+		<Unit filename="..\CGE\Engine.h" />
+		<Unit filename="..\CGE\Exception.cpp" />
+		<Unit filename="..\CGE\Exception.h" />
+		<Unit filename="..\CGE\FragmentShader.cpp" />
+		<Unit filename="..\CGE\FragmentShader.h" />
+		<Unit filename="..\CGE\Graphics.h" />
+		<Unit filename="..\CGE\Image.cpp" />
+		<Unit filename="..\CGE\Image.h" />
+		<Unit filename="..\CGE\IndexVBO.cpp" />
+		<Unit filename="..\CGE\IndexVBO.h" />
+		<Unit filename="..\CGE\LuaMachine.cpp" />
+		<Unit filename="..\CGE\LuaMachine.h" />
+		<Unit filename="..\CGE\ManagedModule.cpp" />
+		<Unit filename="..\CGE\ManagedModule.h" />
+		<Unit filename="..\CGE\Matrix4x4.h" />
+		<Unit filename="..\CGE\Module.cpp" />
+		<Unit filename="..\CGE\Module.h" />
+		<Unit filename="..\CGE\Music.cpp" />
+		<Unit filename="..\CGE\Music.h" />
+		<Unit filename="..\CGE\Platforms.h" />
+		<Unit filename="..\CGE\Program.h" />
+		<Unit filename="..\CGE\PropertyList.cpp" />
+		<Unit filename="..\CGE\PropertyList.h" />
+		<Unit filename="..\CGE\ResourceManager.h" />
+		<Unit filename="..\CGE\Shader.cpp" />
+		<Unit filename="..\CGE\Shader.h" />
+		<Unit filename="..\CGE\Sound.cpp" />
+		<Unit filename="..\CGE\Sound.h" />
+		<Unit filename="..\CGE\Texture.cpp" />
+		<Unit filename="..\CGE\Texture.h" />
+		<Unit filename="..\CGE\Texture2D.cpp" />
+		<Unit filename="..\CGE\Texture2D.h" />
+		<Unit filename="..\CGE\Vectors.h" />
+		<Unit filename="..\CGE\VertexShader.cpp" />
+		<Unit filename="..\CGE\VertexShader.h" />
+		<Unit filename="..\GLee\GLee.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\GLee\GLee.h" />
+		<Unit filename="..\game\TestModule.cpp" />
+		<Unit filename="..\game\TestModule.h" />
+		<Unit filename="..\game\main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
