@@ -103,6 +103,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../GLee/GLee.h" />
+		<Unit filename="../game/Entity.cpp" />
+		<Unit filename="../game/Entity.h" />
 		<Unit filename="../game/GeneralProgram.cpp" />
 		<Unit filename="../game/GeneralProgram.h" />
 		<Unit filename="../game/NullocityGameModule.cpp" />
