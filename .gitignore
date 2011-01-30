@@ -1,3 +1,4 @@
+data/logs/
 source/projects/*.html
 source/projects/*.depend
 source/projects/*.layout
