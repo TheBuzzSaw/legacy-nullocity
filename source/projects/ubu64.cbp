@@ -105,6 +105,10 @@
 		<Unit filename="../GLee/GLee.h" />
 		<Unit filename="../game/GeneralProgram.cpp" />
 		<Unit filename="../game/GeneralProgram.h" />
+		<Unit filename="../game/NullocityGameModule.cpp" />
+		<Unit filename="../game/NullocityGameModule.h" />
+		<Unit filename="../game/Ship.cpp" />
+		<Unit filename="../game/Ship.h" />
 		<Unit filename="../game/TestModule.cpp" />
 		<Unit filename="../game/TestModule.h" />
 		<Unit filename="../game/main.cpp" />
