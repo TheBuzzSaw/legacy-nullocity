@@ -17,11 +17,9 @@ namespace CGE
 
             inline void stop() { mStop = true; }
             inline bool isRunning() { return mRunning; }
+            inline bool stopRequested() { return mStop; }
 
             virtual void run() = 0;
-
-        protected:
-            inline bool stopRequested() { return mStop; }
 
         private:
             static int startThread(void* inData);

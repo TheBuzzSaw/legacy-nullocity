@@ -14,6 +14,11 @@ namespace CGE
             inline void bind() const { glBindTexture(mTarget, mHandle); }
 
         protected:
+            void processParams(const GLenum inParams[]);
+
+            GLenum mTarget;
+
+        private:
             Texture(const Texture& inTexture)
             {
                 // no copying
@@ -25,9 +30,7 @@ namespace CGE
                 return *this;
             }
 
-            void processParams(const GLenum inParams[]);
             GLtexture mHandle;
-            GLenum mTarget;
 
     };
 }

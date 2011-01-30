@@ -110,12 +110,6 @@ namespace CGE
 
             Uint32 ticks = SDL_GetTicks();
 
-            if (ticks > nextSecond)
-            {
-                nextSecond += 1000;
-                framesPerSecond = 0;
-            }
-
             if (ticks > nextPulse)
             {
                 inModule->onPulse();
@@ -126,6 +120,13 @@ namespace CGE
                 inModule->onLoop();
                 SDL_GL_SwapBuffers();
                 ++framesPerSecond;
+            }
+
+            if (ticks > nextSecond)
+            {
+                inModule->onSecond(framesPerSecond);
+                nextSecond += 1000;
+                framesPerSecond = 0;
             }
 
             SDL_Delay(1); // prevent CPU abuse

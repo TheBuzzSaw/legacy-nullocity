@@ -9,7 +9,7 @@ namespace CGE
 
     Texture::~Texture()
     {
-        glDeleteTextures(1, &mHandle);
+        if (mHandle) glDeleteTextures(1, &mHandle);
     }
 
     void Texture::processParams(const GLenum inParams[])

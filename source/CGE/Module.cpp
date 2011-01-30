@@ -29,6 +29,10 @@ namespace CGE
     {
     }
 
+    void Module::onSecond(Uint32 inFramesPerSecond)
+    {
+    }
+
     /// event handlers
     void Module::onEvent(const SDL_Event& inEvent)
     {

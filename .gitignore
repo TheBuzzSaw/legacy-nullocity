@@ -1,0 +1,5 @@
+source/projects/*.html
+source/projects/*.depend
+source/projects/*.layout
+source/projects/obj/
+nullocity-ubu*

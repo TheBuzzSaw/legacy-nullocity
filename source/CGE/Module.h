@@ -19,6 +19,7 @@ namespace CGE
             virtual void onClose();
             virtual void onLoop();
             virtual void onPulse();
+            virtual void onSecond(Uint32 inFramesPerSecond);
 
             /// input events
             virtual void onInputFocus();

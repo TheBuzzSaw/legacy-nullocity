@@ -46,10 +46,13 @@
 			<Add library="SDL" />
 			<Add library="GL" />
 			<Add library="lua5.1" />
+			<Add library="curl" />
 		</Linker>
 		<Unit filename="../CGE/ClusterVBO.h" />
 		<Unit filename="../CGE/CubeMap.cpp" />
 		<Unit filename="../CGE/CubeMap.h" />
+		<Unit filename="../CGE/Download.cpp" />
+		<Unit filename="../CGE/Download.h" />
 		<Unit filename="../CGE/Engine.cpp" />
 		<Unit filename="../CGE/Engine.h" />
 		<Unit filename="../CGE/Exception.cpp" />
@@ -85,6 +88,8 @@
 		<Unit filename="../CGE/Shader.h" />
 		<Unit filename="../CGE/Sound.cpp" />
 		<Unit filename="../CGE/Sound.h" />
+		<Unit filename="../CGE/StopWatch.cpp" />
+		<Unit filename="../CGE/StopWatch.h" />
 		<Unit filename="../CGE/Texture.cpp" />
 		<Unit filename="../CGE/Texture.h" />
 		<Unit filename="../CGE/Texture2D.cpp" />
