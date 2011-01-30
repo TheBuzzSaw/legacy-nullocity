@@ -2,7 +2,7 @@
 #include "math.h"
 #include <CGE/Sound.h>
 
-class Ship
+class Ship : public Entity
 {
     public:
         Ship();
