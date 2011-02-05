@@ -61,33 +61,7 @@ void NullocityGameModule::onLoop()
 
 void NullocityGameModule::onPulse()
 {
-    //stuff that happens at each game "moment"
-    if (forward)
-        PlayerShip->forwardThrust();
-    if (reverse)
-        PlayerShip->reverseThrust();
-    if (!(forward && reverse))
-    ; //todo y decel
-
-
-    if (right && !left)
-        PlayerShip->strafeRight();
-    if (left && !right)
-        PlayerShip->strafeLeft();
-    if (!(right && left))
-    ; // todo x decel
-
-    if (turnRight && !turnLeft)
-        PlayerShip->turnRight();
-    if (turnLeft && !turnRight)
-        PlayerShip->turnLeft();
-
-    if (forward && turnRight && !turnLeft)
-        PlayerShip->rollRight();
-    else if (forward && turnLeft && !turnRight)
-        PlayerShip->rollLeft();
-    else
-        PlayerShip->rollReset();
+    PlayerShip->onPulse();
 
     if (shoot)
     {
@@ -127,37 +101,37 @@ void NullocityGameModule::onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode
 
         case SDLK_w:
         {
-            forward = true;
+            PlayerShip->setThrust(1.0f);
             break;
         }
 
         case SDLK_s:
         {
-            reverse = true;
+            PlayerShip->setThrust(-1.0f);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            right = true;
+            PlayerShip->setStrafe(1.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            left = true;
+            PlayerShip->setStrafe(-1.0f);
             break;
         }
 
         case SDLK_d:
         {
-            turnRight = true;
+            PlayerShip->setTurn(-1.0f);
             break;
         }
 
         case SDLK_a:
         {
-            turnLeft = true;
+            //PlayerShip->setTurn(1.0f);
             break;
         }
 
@@ -177,41 +151,42 @@ void NullocityGameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
     //interact
         switch (inSym)
     {
-        case SDLK_w:
+         case SDLK_w:
         {
-            forward = false;
+            PlayerShip->setThrust(0.0f);
             break;
         }
 
         case SDLK_s:
         {
-            reverse = false;
+            PlayerShip->setThrust(0.0f);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            right = false;
+            PlayerShip->setStrafe(0.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            left = false;
+            PlayerShip->setStrafe(0.0f);
             break;
         }
 
         case SDLK_d:
         {
-            turnRight = false;
+            PlayerShip->setTurn(0.0f);
             break;
         }
 
         case SDLK_a:
         {
-            turnLeft = false;
+            PlayerShip->setTurn(0.0f);
             break;
         }
+
 
         case SDLK_SPACE:
         {

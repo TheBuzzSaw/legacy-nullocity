@@ -2,7 +2,7 @@
 
 Ship::Ship()
 {
-    pts = new float[30]{
+    mPts = new float[30]{
         //top
          0.0f, 1.0f,0.25f,  //0 front
          1.0f,-0.5f,0.25f,  //1 right
@@ -16,7 +16,7 @@ Ship::Ship()
         -1.0f,-1.0f,-0.25f, //8 rear left
         -1.0f,-0.5f,-0.25f};//9 left
 
-    ind = new int[48]{
+    mInd = new int[48]{
          0,1,2,0,2,3,0,3,4, //top
          5,7,6,5,8,7,5,9,8, //bottom
          3,2,8,2,7,8,       //back
@@ -26,20 +26,36 @@ Ship::Ship()
          1,0,6,0,5,6//right
          };
 
-    deltaX = 0.0f;
-    deltaY = 0.0f;
-    fieldDepth = -60.0f;
-    yRotate = 0.0f;
-    zRotate = 0.0f;
+    mMass = 10.0f;
+    mRotation = 90.0f;
+
+    mStrafe = 0.0f;
+    mThrust = 0.0f;
+    mTurn = 0.0f;
+
+    mMaxForwardThrust = 0.005f;
+    mMaxReverseThrust = 0.003f;
+    mMaxStrafeThrust = 0.003f;
+    mMaxTurnSpeed = 2.0f;
+
     loc = new float[2]{0,0};
-    roll = 0;
-    bearing = 90;
+    mRoll = 0;
+    mDeltaRoll = 2;
+
     weaponSound.load("data/audio/dwang.ogg");
+
+    mPosition[0] = 0;
+    mPosition[1] = 0;
+
+    mVelocity[0] = 0;
+    mVelocity[1] = 0;
+
+    mFieldDepth = -60.0f;
 }
 
 Ship::Ship(float pFieldDepth)
 {
-    pts = new float[30]{
+    mPts = new float[30]{
         //top
          0.0f, 1.0f,0.25f,  //0 front
          1.0f,-0.5f,0.25f,  //1 right
@@ -53,7 +69,7 @@ Ship::Ship(float pFieldDepth)
         -1.0f,-1.0f,-0.25f, //8 rear left
         -1.0f,-0.5f,-0.25f};//9 left
 
-    ind = new int[48]{
+    mInd = new int[48]{
          0,1,2,0,2,3,0,3,4, //top
          5,7,6,5,8,7,5,9,8, //bottom
          3,2,8,2,7,8,       //back
@@ -63,42 +79,117 @@ Ship::Ship(float pFieldDepth)
          1,0,6,0,5,6//right
          };
 
-    forwardForce = 0.05f;
-    reverseForce = -0.03f;
-    sideForce = 0.03f;
-    rotateForce = 1.0f;
-    deltaX = 0.0f;
-    deltaY = 0.0f;
-    deltaRoll = 2;
-    fieldDepth = pFieldDepth;
-    yRotate = 0.0f;
-    zRotate = 0.0f;
-    loc = new float[2]{0,0};
-    roll = 0;
-    bearing = 90;
-    scale = 1;
+
+    mMass = 1.0f;
+    mRotation = 90.0f;
+
+    mStrafe = 0.0f;
+    mThrust = 0.0f;
+    mTurn = 0.0f;
+
+    mMaxForwardThrust = 0.005f;
+    mMaxReverseThrust = 0.003f;
+    mMaxStrafeThrust = 0.003f;
+    mMaxTurnSpeed = 2.0f;
+
+    mPosition[0] = 0;
+    mPosition[1] = 0;
+
+    mVelocity[0] = 0;
+    mVelocity[1] = 0;
+
+    mDeltaRoll = 2;
+    mFieldDepth = pFieldDepth;
+    mRoll = 0;
+    mScale = 1;
 }
 
 Ship::~Ship()
 {
-    delete pts;
-    delete ind;
-    delete loc;
+    delete mPts;
+    delete mInd;
 
-    pts = NULL;
-    ind = NULL;
-    loc = NULL;
+    mPts = NULL;
+    mInd = NULL;
+}
+
+void Ship::setStrafe(float strafeInput)
+{
+    mStrafe = strafeInput * mMaxStrafeThrust;
+}
+
+void Ship::setThrust(float thrustInput)
+{
+    if (thrustInput < 0)
+        mThrust = thrustInput * mMaxForwardThrust;
+    else
+        mThrust = thrustInput * mMaxReverseThrust;
+}
+
+void Ship::setTurn(float turnInput)
+{
+    mTurn = turnInput * mMaxTurnSpeed;
+}
+
+
+void Ship::rollRight()
+{
+    if (mRoll < 90)
+        mRoll += mDeltaRoll;
+}
+
+void Ship::rollLeft()
+{
+    if (mRoll > -90)
+        mRoll -= mDeltaRoll;
+}
+
+void Ship::rollReset()
+{
+    if (mRoll > 0)
+        mRoll -=mDeltaRoll;
+    if (mRoll < 0)
+        mRoll +=mDeltaRoll;
+}
+
+void Ship::onPulse()
+{
+    mRotation += mTurn;
+    mForce[0] += mThrust * cos(mRotation * 3.14159/180) + mStrafe * sin(mRotation * 3.14159/180);
+    mForce[1] += mThrust * sin(mRotation * 3.14159/180) + mStrafe * cos(mRotation * 3.14159/180);
+    applyForce(mForce,mMass);
+
+    if (mThrust > 0)
+    {
+        if (mTurn > 0)
+            rollLeft();
+        else if (mTurn < 0)
+            rollRight();
+    }
+    else
+        rollReset();
+    Entity::onPulse();
+}
+
+void Ship::onDeath()
+{
+    //Nothing yet
+}
+
+void Ship::onCollision(const Entity& inEntity)
+{
+    //Nothing yet
 }
 
 void Ship::render()
 {
     glPushMatrix();
     glLoadIdentity();
-    glTranslatef(loc[0],loc[1],fieldDepth);
+    glTranslatef(mPosition[0],mPosition[1],mFieldDepth);
 	glTranslatef(0,0,0); //ctr
-	glRotatef(bearing-90,0,0,1);
-	glRotatef(roll,0,1,0);
-	glScalef(1,1,1);
+	glRotatef(mRotation-90,0,0,1);
+	glRotatef(mRoll,0,1,0);
+	glScalef(mScale,mScale,mScale);
 	glTranslatef(0,0,0);//-ctr
 
     glBegin(GL_TRIANGLES);
@@ -111,7 +202,7 @@ void Ship::render()
             else if (i == 24)
                 glColor3f(0.0f,0.0f,1.0f);
 
-            glVertex3f(pts[ind[i]*3],pts[ind[i]*3+1],pts[ind[i]*3+2]);
+            glVertex3f(mPts[mInd[i]*3],mPts[mInd[i]*3+1],mPts[mInd[i]*3+2]);
         }
     glEnd();
     glPopMatrix();
@@ -121,66 +212,4 @@ void Ship::fire()
 {
     //Ima firin mah Lazer!!!!!
     weaponSound.play();
-}
-//todo: incorperate accel and decel && switch roll and bering back to floats
-void Ship::forwardThrust()
-{
-    yMove(forwardForce);
-}
-
-void Ship::reverseThrust()
-{
-    yMove(reverseForce);
-}
-
-void Ship::strafeRight()
-{
-    xMove(sideForce);
-}
-
-void Ship::strafeLeft()
-{
-    xMove(-sideForce);
-}
-
-void Ship::turnRight()
-{
-    bearing -= 1;
-}
-
-void Ship::turnLeft()
-{
-    bearing += 1;
-}
-
-void Ship::rollRight()
-{
-    if (roll < 90)
-        roll += deltaRoll;
-}
-
-void Ship::rollLeft()
-{
-    if (roll > -90)
-        roll -= deltaRoll;
-}
-
-void Ship::xMove(float thrust)
-{
-    loc[0] += thrust * sin(bearing * 3.14159/180);
-    loc[1] += thrust * cos(bearing * 3.14159/180);
-}
-
-void Ship::yMove(float thrust)
-{
-    loc[0] += thrust * cos(bearing * 3.14159/180);
-    loc[1] += thrust * sin(bearing * 3.14159/180);
-}
-
-void Ship::rollReset()
-{
-    if (roll > 0)
-        roll -=deltaRoll;
-    if (roll < 0)
-        roll +=deltaRoll;
 }

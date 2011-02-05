@@ -1,4 +1,4 @@
-log begun at Sat Jan 29 18:59:54 2011
+log begun at Fri Feb  4 20:03:28 2011
 
 
 missing data/settings.txt -- loading defaults
