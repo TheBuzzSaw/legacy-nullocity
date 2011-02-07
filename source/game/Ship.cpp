@@ -44,12 +44,6 @@ Ship::Ship()
 
     weaponSound.load("data/audio/dwang.ogg");
 
-    mPosition[0] = 0;
-    mPosition[1] = 0;
-
-    mVelocity[0] = 0;
-    mVelocity[1] = 0;
-
     mFieldDepth = -60.0f;
 }
 
@@ -81,7 +75,7 @@ Ship::Ship(float pFieldDepth)
 
 
     mMass = 1.0f;
-    mRotation = 90.0f;
+    //mRotation = 90.0f;
 
     mStrafe = 0.0f;
     mThrust = 0.0f;
@@ -124,6 +118,9 @@ void Ship::setThrust(float thrustInput)
         mThrust = thrustInput * mMaxForwardThrust;
     else
         mThrust = thrustInput * mMaxReverseThrust;
+
+    mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f);
+    mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f);
 }
 
 void Ship::setTurn(float turnInput)
@@ -155,9 +152,9 @@ void Ship::rollReset()
 void Ship::onPulse()
 {
     mRotation += mTurn;
-    mForce[0] += mThrust * cos(mRotation * 3.14159/180) + mStrafe * sin(mRotation * 3.14159/180);
-    mForce[1] += mThrust * sin(mRotation * 3.14159/180) + mStrafe * cos(mRotation * 3.14159/180);
-    applyForce(mForce,mMass);
+ //   mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f) + mStrafe * sin(mRotation * M_PI/180.0f);
+ //   mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f) + mStrafe * cos(mRotation * 3.14159/180.0f);
+    applyForce(mForce,.5);
 
     if (mThrust > 0)
     {

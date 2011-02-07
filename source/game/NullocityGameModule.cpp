@@ -131,7 +131,7 @@ void NullocityGameModule::onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode
 
         case SDLK_a:
         {
-            //PlayerShip->setTurn(1.0f);
+            PlayerShip->setTurn(1.0f);
             break;
         }
 
