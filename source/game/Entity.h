@@ -31,9 +31,10 @@ class Entity
         unsigned int mMaxHP;
 
     private:
+
         Entity(const Entity& inEntity)
         {
-            // no copying
+
         }
 
         Entity& operator=(const Entity& inEntity)

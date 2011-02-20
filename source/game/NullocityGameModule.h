@@ -7,6 +7,10 @@
 #include <CGE/PropertyList.h>
 #include <CGE/Matrix4x4.h>
 #include "Ship.h"
+#include "Asteroid.h"
+#include "Entity.h"
+#include <list>
+using namespace std;
 
 class NullocityGameModule : public CGE::ManagedModule
 {
@@ -28,6 +32,7 @@ class NullocityGameModule : public CGE::ManagedModule
         virtual void onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode);
 
     private:
+        list<Entity*> GameEntity;
         Ship *PlayerShip;
 
         bool forward;

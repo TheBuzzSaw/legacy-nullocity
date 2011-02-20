@@ -17,6 +17,14 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
 
     PlayerShip = new Ship(-60);
 
+
+    GameEntity.push_back(PlayerShip);
+    vec2f rockPos;
+    rockPos[0] = 4;
+    rockPos[1] = 4;
+
+    GameEntity.push_back(new Asteroid(rockPos));
+
     forward = false;
     reverse = false;
     left = false;
@@ -28,9 +36,18 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
 
 void NullocityGameModule::onUnload()
 {
+    //kill data :(
+
     delete PlayerShip;
     PlayerShip = NULL;
-    //kill data :(
+
+    list<Entity*>::iterator iter;
+
+    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    {
+        delete *iter;
+        *iter = NULL;
+    }
 }
 
 void NullocityGameModule::onOpen()
@@ -56,17 +73,30 @@ void NullocityGameModule::onClose()
 void NullocityGameModule::onLoop()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    PlayerShip->render();
+    //glPushMatrix();
+    //glTranslatef(0,0,-60);
+
+    list<Entity*>::iterator iter;
+
+    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    {
+        (*iter)->render();
+    }
+    //glPopMatrix();
 }
 
 void NullocityGameModule::onPulse()
 {
-    PlayerShip->onPulse();
+    list<Entity*>::iterator iter;
+    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    {
+        (*iter)->onPulse();
+    }
 
     if (shoot)
     {
         PlayerShip->fire();
-        CGE::Sound lazer("data/audio/me.wav");
+        CGE::Sound lazer("data/audio/dwang.ogg");
         lazer.setVolume(0.5);
         lazer.play();
     }

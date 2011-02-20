@@ -23,10 +23,10 @@ Ship::Ship()
          4,3,8,4,8,9,       //left
          2,1,6,2,6,7,       //right
          0,4,9,0,9,5,       //frontleft
-         1,0,6,0,5,6//right
+         1,0,6,0,5,6        //right
          };
 
-    mMass = 10.0f;
+    mMass = 100.0f;
     mRotation = 90.0f;
 
     mStrafe = 0.0f;
@@ -75,7 +75,7 @@ Ship::Ship(float pFieldDepth)
 
 
     mMass = 1.0f;
-    //mRotation = 90.0f;
+    mRotation = 90.0f;
 
     mStrafe = 0.0f;
     mThrust = 0.0f;
@@ -119,8 +119,8 @@ void Ship::setThrust(float thrustInput)
     else
         mThrust = thrustInput * mMaxReverseThrust;
 
-    mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f);
-    mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f);
+    //mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f);
+    //mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f);
 }
 
 void Ship::setTurn(float turnInput)
@@ -152,9 +152,9 @@ void Ship::rollReset()
 void Ship::onPulse()
 {
     mRotation += mTurn;
- //   mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f) + mStrafe * sin(mRotation * M_PI/180.0f);
- //   mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f) + mStrafe * cos(mRotation * 3.14159/180.0f);
-    applyForce(mForce,.5);
+    mForce[0] = mThrust * cos(mRotation * M_PI/180.0f) + mStrafe * sin(-mRotation * M_PI/180.0f);
+    mForce[1] = mThrust * sin(mRotation * M_PI/180.0f) + mStrafe * cos(-mRotation * M_PI/180.0f);
+    applyForce(mForce,0.5f);
 
     if (mThrust > 0)
     {

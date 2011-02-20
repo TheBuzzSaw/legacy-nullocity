@@ -103,6 +103,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../GLee/GLee.h" />
+		<Unit filename="../game/Asteroid.cpp" />
+		<Unit filename="../game/Asteroid.h" />
 		<Unit filename="../game/Entity.cpp" />
 		<Unit filename="../game/Entity.h" />
 		<Unit filename="../game/GeneralProgram.cpp" />
