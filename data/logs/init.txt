@@ -1,4 +1,4 @@
-log begun at Thu Feb 24 17:57:47 2011
+log begun at Fri Feb 25 15:45:10 2011
 
 
 missing data/settings.txt -- loading defaults
@@ -206,3 +206,12 @@ GL_SUN_multi_draw_arrays
 GL_WIN_swap_hint
 WGL_EXT_swap_control
 
+-- settings used --
+audio buffer size = 1024
+audio channels = 2
+audio format = 32784
+audio rate = 22050
+bits per pixel = 24
+display height = 600
+display width = 800
+full screen = 0

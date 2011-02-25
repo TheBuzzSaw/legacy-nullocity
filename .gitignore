@@ -4,3 +4,4 @@ source/projects/*.depend
 source/projects/*.layout
 source/projects/obj/
 nullocity-ubu*
+data/logs/init.txt
