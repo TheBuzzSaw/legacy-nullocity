@@ -38,15 +38,14 @@ void NullocityGameModule::onUnload()
 {
     //kill data :(
 
-    delete PlayerShip;
     PlayerShip = NULL;
 
     list<Entity*>::iterator iter;
 
     for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
     {
-        delete *iter;
-        *iter = NULL;
+        delete (*iter);
+        (*iter) = NULL;
     }
 }
 
