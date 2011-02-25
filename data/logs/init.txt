@@ -1,11 +1,13 @@
-log begun at Sun Feb 20 00:04:47 2011
+log begun at Thu Feb 24 17:57:47 2011
 
 
 missing data/settings.txt -- loading defaults
 
 -- Available Full Screen Resolutions --
-    2390 x 768
     1366 x 768
+    1360 x 768
+    1280 x 768
+    1280 x 720
     1024 x 768
     1024 x 600
     800 x 600

@@ -35,9 +35,9 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
                           -1,-1, 1};//left near
 
     mInd = new int[12] {1,4,2,  //front
-                        1,2,3,  //back
-                        1,4,3,  //left
-                        4,2,3}; //bottom
+                        3,2,1,  //back
+                        3,4,1,  //left
+                        3,2,4}; //bottom
 
     mPosition[0] = pPosition[0];
     mPosition[1] = pPosition[1];

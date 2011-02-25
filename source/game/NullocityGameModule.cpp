@@ -143,13 +143,13 @@ void NullocityGameModule::onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode
 
         case SDLK_RIGHT:
         {
-            PlayerShip->setStrafe(1.0f);
+            PlayerShip->setStrafe(-1.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            PlayerShip->setStrafe(-1.0f);
+            PlayerShip->setStrafe(1.0f);
             break;
         }
 
