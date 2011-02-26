@@ -26,7 +26,7 @@ Ship::Ship()
          1,0,6,0,5,6        //right
          };
 
-    mMass = 100.0f;
+    mMass = 5.0f;
     mRotation = 90.0f;
 
     mStrafe = 0.0f;
@@ -38,7 +38,6 @@ Ship::Ship()
     mMaxStrafeThrust = 0.003f;
     mMaxTurnSpeed = 2.0f;
 
-    loc = new float[2]{0,0};
     mRoll = 0;
     mDeltaRoll = 2;
 
@@ -74,7 +73,7 @@ Ship::Ship(float pFieldDepth)
          };
 
 
-    mMass = 1.0f;
+    mMass = 5.0f;
     mRotation = 90.0f;
 
     mStrafe = 0.0f;
@@ -118,9 +117,6 @@ void Ship::setThrust(float thrustInput)
         mThrust = thrustInput * mMaxForwardThrust;
     else
         mThrust = thrustInput * mMaxReverseThrust;
-
-    //mForce[0] = mThrust * cos(mRotation * 3.14159/180.0f);
-    //mForce[1] = mThrust * sin(mRotation * 3.14159/180.0f);
 }
 
 void Ship::setTurn(float turnInput)
@@ -162,6 +158,8 @@ void Ship::onPulse()
             rollLeft();
         else if (mTurn < 0)
             rollRight();
+        else
+            rollReset();
     }
     else
         rollReset();

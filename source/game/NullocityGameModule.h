@@ -35,12 +35,6 @@ class NullocityGameModule : public CGE::ManagedModule
         list<Entity*> GameEntity;
         Ship *PlayerShip;
 
-        bool forward;
-        bool reverse;
-        bool left;
-        bool right;
-        bool turnRight;
-        bool turnLeft;
         bool shoot;
 };
 #endif

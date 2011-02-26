@@ -21,12 +21,10 @@ class Ship : public Entity
         void setThrust(float thrustInput);
         void setTurn(float turnInput);
 
-        void forwardThrust();
-        void reverseThrust();
-        void strafeRight();
-        void strafeLeft();
-        void turnRight();
-        void turnLeft();
+        float getStrafe(){return mStrafe;}
+        float getThrust(){return mThrust;}
+        float getTurn(){return mTurn;}
+
         void rollRight();
         void rollLeft();
         void rollReset();
@@ -51,14 +49,4 @@ class Ship : public Entity
         CGE::Sound weaponSound;
 
         float mFieldDepth; // remove after setting up the camera.
-
-        float yRotate;
-        float zRotate;
-        float deltaX;
-        float deltaY;
-        float *loc;
-        float bearing;
-
-        void xMove(float thrust);
-        void yMove(float thrust);
 };

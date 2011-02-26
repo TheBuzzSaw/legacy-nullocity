@@ -24,14 +24,6 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
     rockPos[1] = 4;
 
     GameEntity.push_back(new Asteroid(rockPos));
-
-    forward = false;
-    reverse = false;
-    left = false;
-    right = false;
-    turnRight = false;
-    turnLeft = false;
-    shoot = false;
 }
 
 void NullocityGameModule::onUnload()
@@ -92,6 +84,7 @@ void NullocityGameModule::onPulse()
         (*iter)->onPulse();
     }
 
+    //not working
     if (shoot)
     {
         PlayerShip->fire();
@@ -182,37 +175,45 @@ void NullocityGameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
     {
          case SDLK_w:
         {
-            PlayerShip->setThrust(0.0f);
+            if (PlayerShip->getThrust() > 0.0f)
+                PlayerShip->setThrust(0.0f);
             break;
         }
 
         case SDLK_s:
         {
-            PlayerShip->setThrust(0.0f);
+            if (PlayerShip->getThrust() < 0.0f)
+                PlayerShip->setThrust(0.0f);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            PlayerShip->setStrafe(0.0f);
+            if (PlayerShip->getStrafe() < 0.0f)
+                PlayerShip->setStrafe(0.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            PlayerShip->setStrafe(0.0f);
+            if (PlayerShip->getStrafe() > 0.0f)
+                PlayerShip->setStrafe(0.0f);
             break;
         }
 
         case SDLK_d:
         {
-            PlayerShip->setTurn(0.0f);
+
+            if (PlayerShip->getTurn() < 0.0f)
+                PlayerShip->setTurn(0.0f);
             break;
         }
 
         case SDLK_a:
         {
-            PlayerShip->setTurn(0.0f);
+
+            if (PlayerShip->getTurn() > 0.0f)
+                PlayerShip->setTurn(0.0f);
             break;
         }
 
