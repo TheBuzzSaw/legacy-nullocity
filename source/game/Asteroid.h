@@ -1,8 +1,11 @@
 #ifndef ASTEROID_H
 #define ASTEROID_H
 
-#include "Entity.h"
 #include <GLee/GLee.h>
+
+#include <CGE/IndexVBO.h>
+
+#include "Entity.h"
 
 
 class Asteroid : public Entity
@@ -17,12 +20,14 @@ class Asteroid : public Entity
 
     protected:
     private:
-        float* mPts;
-        int* mInd;
+
         Asteroid();
 
         float mFieldDepth;
         float mScale;
+
+        CGE::VertexBufferObject mVertexVBO;
+        CGE::IndexVBO mIVBO;
 };
 
 #endif // ASTEROID_H

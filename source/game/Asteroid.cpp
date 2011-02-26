@@ -6,15 +6,21 @@ Asteroid::Asteroid()
 
 Asteroid::Asteroid(vec2f pPosition)
 {
-    mPts = new float[12] { 0, 1, 0, //top
-                           1,-1, 0, //right
-                          -1,-1,-1, //left far
-                          -1,-1, 1};//left near
+    GLfloat vertices[12]{
+         0.0f,  1.0f,  0.0f, //1 top
+         1.0f, -1.0f,  0.0f, //2 right
+        -1.0f, -1.0f, -1.0f, //3 left far
+        -1.0f, -1.0f,  1.0f};//4 left near
 
-    mInd = new int[12] {2,4,1,  //front
-                        3,2,1,  //back
-                        3,4,1,  //left
-                        3,2,4}; //bottom
+    mVertexVBO.loadData(vertices, 4, 3);
+
+    GLfloat indices[12]{
+        2, 4, 1,  //front
+        3, 2, 1,  //back
+        3, 4, 1,  //left
+        3, 2, 4}; //bottom
+
+    mIVBO.loadData(indices, 12);
 
     mPosition[0] = pPosition[0];
     mPosition[1] = pPosition[1];
@@ -29,15 +35,21 @@ Asteroid::Asteroid(vec2f pPosition)
 
 Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
 {
-    mPts = new float[12] { 0, 1, 0, //top
-                           1,-1, 0, //right
-                          -1,-1,-1, //left far
-                          -1,-1, 1};//left near
+    GLfloat vertices[12]{
+         0.0f,  1.0f,  0.0f, //1 top
+         1.0f, -1.0f,  0.0f, //2 right
+        -1.0f, -1.0f, -1.0f, //3 left far
+        -1.0f, -1.0f,  1.0f};//4 left near
 
-    mInd = new int[12] {1,4,2,  //front
-                        3,2,1,  //back
-                        3,4,1,  //left
-                        3,2,4}; //bottom
+    mVertexVBO.loadData(vertices, 4, 3);
+
+    GLfloat indices[12]{
+        2, 4, 1,  //front
+        3, 2, 1,  //back
+        3, 4, 1,  //left
+        3, 2, 4}; //bottom
+
+    mIVBO.loadData(indices, 12);
 
     mPosition[0] = pPosition[0];
     mPosition[1] = pPosition[1];
@@ -62,12 +74,13 @@ void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
     matrix.scale(mScale);
     glLoadMatrixf(matrix);
 
-    glBegin(GL_TRIANGLES);
-        for (int i = 0; i < 12; i++)
-        {
-            if (i == 0)
-                glColor3f(0.54f,0.27f,0.07f);
-            glVertex3f(mPts[mInd[i]*3],mPts[mInd[i]*3+1],mPts[mInd[i]*3+2]);
-        }
-    glEnd();
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+
+    mVertexVBO.bind();
+    glVertexPointer(3, GL_FLOAT, 0, 0);
+
+    mIVBO.draw();
+
+    glDisableClientState(GL_VERTEX_ARRAY);
 }
