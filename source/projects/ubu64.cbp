@@ -48,6 +48,7 @@
 			<Add library="lua5.1" />
 			<Add library="curl" />
 		</Linker>
+		<Unit filename="../CGE/ClusterVBO.cpp" />
 		<Unit filename="../CGE/ClusterVBO.h" />
 		<Unit filename="../CGE/CubeMap.cpp" />
 		<Unit filename="../CGE/CubeMap.h" />
@@ -97,18 +98,26 @@
 		<Unit filename="../CGE/Thread.cpp" />
 		<Unit filename="../CGE/Thread.h" />
 		<Unit filename="../CGE/Vectors.h" />
+		<Unit filename="../CGE/VertexArrayObject.cpp" />
+		<Unit filename="../CGE/VertexArrayObject.h" />
+		<Unit filename="../CGE/VertexBufferObject.cpp" />
+		<Unit filename="../CGE/VertexBufferObject.h" />
 		<Unit filename="../CGE/VertexShader.cpp" />
 		<Unit filename="../CGE/VertexShader.h" />
 		<Unit filename="../GLee/GLee.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../GLee/GLee.h" />
+		<Unit filename="../game/Asteroid.cpp" />
+		<Unit filename="../game/Asteroid.h" />
 		<Unit filename="../game/Entity.cpp" />
 		<Unit filename="../game/Entity.h" />
 		<Unit filename="../game/GeneralProgram.cpp" />
 		<Unit filename="../game/GeneralProgram.h" />
-		<Unit filename="../game/TestModule.cpp" />
-		<Unit filename="../game/TestModule.h" />
+		<Unit filename="../game/NullocityGameModule.cpp" />
+		<Unit filename="../game/NullocityGameModule.h" />
+		<Unit filename="../game/Ship.cpp" />
+		<Unit filename="../game/Ship.h" />
 		<Unit filename="../game/main.cpp" />
 		<Extensions>
 			<code_completion />

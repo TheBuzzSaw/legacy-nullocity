@@ -2,7 +2,6 @@
 #define CGE_OPENGL_H
 
 #include <GLee/GLee.h>
-typedef GLuint GLtexture;
 typedef GLint GLuniform;
 
 #include <SDL.h>

@@ -2,34 +2,20 @@
 
 namespace CGE
 {
-    IndexVBO::IndexVBO() : mSize(0)
+    IndexVBO::IndexVBO(GLenum inUsage)
+        : VertexBufferObject(GL_ELEMENT_ARRAY_BUFFER, GL_UNSIGNED_INT,
+        inUsage)
     {
-        glGenBuffers(1, &mBuffer);
     }
 
     IndexVBO::~IndexVBO()
     {
-        glDeleteBuffers(1, &mBuffer);
     }
 
-    void IndexVBO::loadData(GLenum inMode, GLuint inSize, const GLuint* inData,
-        GLenum inUsage)
+    void IndexVBO::draw(GLenum inMode) const
     {
-        mMode = inMode;
-        mSize = inSize;
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mBuffer);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, inSize * sizeof(GLuint),
-            inData, inUsage);
+        bind();
+        glDrawElements(inMode, mSize, GL_UNSIGNED_INT, 0);
     }
 
-    void IndexVBO::setMode(GLenum inMode)
-    {
-        mMode = inMode;
-    }
-
-    void IndexVBO::draw() const
-    {
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mBuffer);
-        glDrawElements(mMode, mSize, GL_UNSIGNED_INT, 0);
-    }
 }
