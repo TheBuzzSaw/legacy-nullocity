@@ -36,5 +36,7 @@ class NullocityGameModule : public CGE::ManagedModule
         Ship *PlayerShip;
 
         bool shoot;
+        CGE::Matrix4x4<GLfloat> mProjection;
+        CGE::Matrix4x4<GLfloat> mModelView;
 };
 #endif

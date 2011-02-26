@@ -1,16 +1,16 @@
 #include <GLee/GLee.h>
-#include "math.h"
+#include <cmath>
 #include <CGE/Sound.h>
+#include <CGE/IndexVBO.h>
 #include "Entity.h"
 
 class Ship : public Entity
 {
     public:
-        Ship();
-        Ship(float pFieldDepth);
+        Ship(float pFieldDepth = -60.0f);
         ~Ship();
 
-        virtual void render();
+        virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
         virtual void onPulse();
         virtual void onDeath(); // when HP hit zero
         virtual void onCollision(const Entity& inEntity);
@@ -21,15 +21,15 @@ class Ship : public Entity
         void setThrust(float thrustInput);
         void setTurn(float turnInput);
 
-        float getStrafe(){return mStrafe;}
-        float getThrust(){return mThrust;}
-        float getTurn(){return mTurn;}
+        inline float getStrafe() { return mStrafe; }
+        inline float getThrust() { return mThrust; }
+        inline float getTurn() { return mTurn; }
 
+    private:
         void rollRight();
         void rollLeft();
         void rollReset();
 
-    private:
         float mStrafe;
         float mThrust;
         float mTurn;
@@ -43,10 +43,10 @@ class Ship : public Entity
 
         int mRoll;
         int mDeltaRoll;
-        float *mPts;
-        int *mInd;
         float mScale;
         CGE::Sound weaponSound;
+        CGE::VertexBufferObject mVertexVBO;
+        CGE::IndexVBO mIVBO;
 
         float mFieldDepth; // remove after setting up the camera.
 };

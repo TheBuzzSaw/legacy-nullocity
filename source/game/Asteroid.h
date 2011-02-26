@@ -13,7 +13,7 @@ class Asteroid : public Entity
         Asteroid(vec2f pPosition);
         Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity);
 
-        virtual void render();
+        virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
 
     protected:
     private:

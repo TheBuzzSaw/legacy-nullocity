@@ -54,16 +54,13 @@ Asteroid::~Asteroid()
 
 }
 
-void Asteroid::render()
+void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
-    glPushMatrix();
-    glLoadIdentity();
-    glTranslatef(mPosition[0],mPosition[1],mFieldDepth);
-	glTranslatef(0,0,0); //ctr
-	glRotatef(mRotation-90,0,0,1);
-	//glRotatef(mRoll,0,1,0);
-	glScalef(mScale,mScale,mScale);
-	glTranslatef(0,0,0);//-ctr
+    CGE::Matrix4x4<GLfloat> matrix(inMatrix);
+    matrix.translate(mPosition[0], mPosition[1], mFieldDepth);
+    matrix.rotateZ(mRotation - 90.0f);
+    matrix.scale(mScale);
+    glLoadMatrixf(matrix);
 
     glBegin(GL_TRIANGLES);
         for (int i = 0; i < 12; i++)
@@ -73,5 +70,4 @@ void Asteroid::render()
             glVertex3f(mPts[mInd[i]*3],mPts[mInd[i]*3+1],mPts[mInd[i]*3+2]);
         }
     glEnd();
-    glPopMatrix();
 }

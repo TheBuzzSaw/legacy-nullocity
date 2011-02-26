@@ -1,6 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <CGE/Graphics.h>
+#include <CGE/Matrix4x4.h>
 #include <CGE/Vectors.h>
 
 class Entity
@@ -9,7 +11,7 @@ class Entity
         Entity();
         virtual ~Entity();
 
-        virtual void render() = 0;
+        virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix) = 0;
         virtual void onPulse();
         virtual void onDeath(); // when HP hit zero
         virtual void onCollision(const Entity& inEntity);

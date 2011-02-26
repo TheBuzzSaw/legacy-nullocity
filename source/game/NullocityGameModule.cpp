@@ -64,16 +64,12 @@ void NullocityGameModule::onClose()
 void NullocityGameModule::onLoop()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    //glPushMatrix();
-    //glTranslatef(0,0,-60);
 
     list<Entity*>::iterator iter;
-
     for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
     {
-        (*iter)->render();
+        (*iter)->render(mModelView);
     }
-    //glPopMatrix();
 }
 
 void NullocityGameModule::onPulse()
@@ -92,20 +88,17 @@ void NullocityGameModule::onPulse()
         lazer.setVolume(0.5);
         lazer.play();
     }
-
 }
 
 void NullocityGameModule::onResize(int inWidth, int inHeight)
 {
-    mat4f mProjection;
     float ratio = static_cast<float>(inWidth) / static_cast<float>(inHeight);
     mProjection.loadIdentity();
-    mProjection.perspective(15, ratio, 1, 5000, true);
+    mProjection.perspective(30.0f, ratio, 1.0f, 100.0f, true);
 
-    glViewport(0,0,inWidth,inHeight);
+    glViewport(0, 0, inWidth, inHeight);
     glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glLoadMatrixf(mProjection);
+    glLoadMatrixf(mProjection);
     glMatrixMode(GL_MODELVIEW);
 }
 

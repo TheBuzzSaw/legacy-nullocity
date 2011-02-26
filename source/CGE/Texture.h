@@ -30,7 +30,7 @@ namespace CGE
                 return *this;
             }
 
-            GLtexture mHandle;
+            GLuint mHandle;
 
     };
 }

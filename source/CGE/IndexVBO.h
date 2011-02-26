@@ -1,25 +1,20 @@
 #ifndef INDEXVBO_H
 #define INDEXVBO_H
 
-#include "Graphics.h"
+#include "VertexBufferObject.h"
 
 namespace CGE
 {
-    class IndexVBO
+    class IndexVBO : public VertexBufferObject
     {
         public:
-            IndexVBO();
-            ~IndexVBO();
+            IndexVBO(GLenum inUsage = GL_STATIC_DRAW);
+            virtual ~IndexVBO();
 
-            void draw() const;
-            void loadData(GLenum inMode, GLuint inSize, const GLuint* inData,
-                GLenum inUsage = GL_STATIC_DRAW);
-            void setMode(GLenum inMode);
+            void draw(GLenum inMode = GL_TRIANGLES) const;
 
+        protected:
         private:
-            GLenum mMode;
-            GLuint mBuffer;
-            GLuint mSize;
     };
 }
 
