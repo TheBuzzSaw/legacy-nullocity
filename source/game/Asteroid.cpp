@@ -22,6 +22,14 @@ Asteroid::Asteroid(vec2f pPosition)
 
     mIVBO.loadData(indices, 12);
 
+    GLuint colors[16] = {
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f};
+
+    mColorVBO.loadData(colors,4,4);
+
     mPosition[0] = pPosition[0];
     mPosition[1] = pPosition[1];
     mRotation = 0.0f;
@@ -51,6 +59,14 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
 
     mIVBO.loadData(indices, 12);
 
+    GLuint colors[16] = {
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f,
+        139.0f, 69.0f, 19.0f, 1.0f};
+
+    mColorVBO.loadData(colors,4,4);
+
     mPosition[0] = pPosition[0];
     mPosition[1] = pPosition[1];
     mRotation = pRotation;
@@ -68,10 +84,6 @@ Asteroid::~Asteroid()
 
 void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
-
-    glColor3f(139,69,19);
-
-
     CGE::Matrix4x4<GLfloat> matrix(inMatrix);
     matrix.translate(mPosition[0], mPosition[1], mFieldDepth);
     matrix.rotateZ(mRotation - 90.0f);
@@ -80,10 +92,15 @@ void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 
 
     glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
 
     mVertexVBO.bind();
     glVertexPointer(3, GL_FLOAT, 0, 0);
+
+    mColorVBO.bind();
+    glColorPointer(4, GL_FLOAT, 0, 0);
     mIVBO.draw();
 
+    glDisableClientState(GL_COLOR_ARRAY);
     glDisableClientState(GL_VERTEX_ARRAY);
 }

@@ -28,6 +28,7 @@ class Asteroid : public Entity
 
         CGE::VertexBufferObject mVertexVBO;
         CGE::IndexVBO mIVBO;
+        CGE::VertexBufferObject mColorVBO;
 };
 
 #endif // ASTEROID_H
