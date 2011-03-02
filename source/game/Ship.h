@@ -47,6 +47,7 @@ class Ship : public Entity
         CGE::Sound weaponSound;
         CGE::VertexBufferObject mVertexVBO;
         CGE::IndexVBO mIVBO;
+        CGE::VertexBufferObject mColorVBO;
 
         float mFieldDepth; // remove after setting up the camera.
 };

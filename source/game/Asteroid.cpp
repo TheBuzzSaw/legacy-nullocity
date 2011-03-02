@@ -22,11 +22,11 @@ Asteroid::Asteroid(vec2f pPosition)
 
     mIVBO.loadData(indices, 12);
 
-    GLuint colors[16] = {
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f};
+    GLfloat colors[16] = {
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f};
 
     mColorVBO.loadData(colors,4,4);
 
@@ -59,11 +59,11 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
 
     mIVBO.loadData(indices, 12);
 
-    GLuint colors[16] = {
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f,
-        139.0f, 69.0f, 19.0f, 1.0f};
+    GLfloat colors[16] = {
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f,
+        0.54f, 0.27f, 0.07f, 1.0f};
 
     mColorVBO.loadData(colors,4,4);
 
@@ -99,6 +99,7 @@ void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 
     mColorVBO.bind();
     glColorPointer(4, GL_FLOAT, 0, 0);
+
     mIVBO.draw();
 
     glDisableClientState(GL_COLOR_ARRAY);

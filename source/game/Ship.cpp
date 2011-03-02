@@ -31,6 +31,22 @@ Ship::Ship(float pFieldDepth) : mFieldDepth(pFieldDepth)
 
     mIVBO.loadData(indices, 48);
 
+
+    GLfloat colors[40] = {
+        1.0f, 0.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 0.0f, 1.0f, 1.0f,
+        0.0f, 1.0f, 1.0f, 1.0f,
+        1.0f, 1.0f, 0.0f, 1.0f,
+
+        1.0f, 1.0f, 0.0f, 1.0f,
+        0.0f, 1.0f, 1.0f, 1.0f,
+        0.0f, 0.0f, 1.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 0.0f, 0.0f, 1.0f};
+
+    mColorVBO.loadData(colors, 10, 4);
+
     mMass = 0.1f;
     mRotation = 90.0f;
 
@@ -138,12 +154,17 @@ void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
     glLoadMatrixf(matrix);
 
     glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
 
     mVertexVBO.bind();
     glVertexPointer(3, GL_FLOAT, 0, 0);
 
+    mColorVBO.bind();
+    glColorPointer(4, GL_FLOAT, 0, 0);
+
     mIVBO.draw();
 
+    glDisableClientState(GL_COLOR_ARRAY);
     glDisableClientState(GL_VERTEX_ARRAY);
 }
 
