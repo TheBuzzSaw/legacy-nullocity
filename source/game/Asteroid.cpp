@@ -6,19 +6,19 @@ Asteroid::Asteroid()
 
 Asteroid::Asteroid(vec2f pPosition)
 {
-    GLfloat vertices[12]{
-         0.0f,  1.0f,  0.0f, //1 top
-         1.0f, -1.0f,  0.0f, //2 right
-        -1.0f, -1.0f, -1.0f, //3 left far
-        -1.0f, -1.0f,  1.0f};//4 left near
+    GLfloat vertices[12] = {
+         0.0f,  1.0f,  0.0f, //0 top
+         1.0f, -1.0f,  0.0f, //1 right
+        -1.0f, -1.0f, -1.0f, //2 left far
+        -1.0f, -1.0f,  1.0f};//3 left near
 
     mVertexVBO.loadData(vertices, 4, 3);
 
-    GLfloat indices[12]{
-        2, 4, 1,  //front
-        3, 2, 1,  //back
-        3, 4, 1,  //left
-        3, 2, 4}; //bottom
+    GLuint indices[12] = {
+        1, 3, 0,  //front
+        2, 1, 0,  //back
+        2, 3, 0,  //left
+        2, 1, 3}; //bottom
 
     mIVBO.loadData(indices, 12);
 
@@ -36,18 +36,18 @@ Asteroid::Asteroid(vec2f pPosition)
 Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
 {
     GLfloat vertices[12]{
-         0.0f,  1.0f,  0.0f, //1 top
-         1.0f, -1.0f,  0.0f, //2 right
-        -1.0f, -1.0f, -1.0f, //3 left far
-        -1.0f, -1.0f,  1.0f};//4 left near
+         0.0f,  1.0f,  0.0f, //0 top
+         1.0f, -1.0f,  0.0f, //1 right
+        -1.0f, -1.0f, -1.0f, //2 left far
+        -1.0f, -1.0f,  1.0f};//3 left near
 
     mVertexVBO.loadData(vertices, 4, 3);
 
     GLfloat indices[12]{
-        2, 4, 1,  //front
-        3, 2, 1,  //back
-        3, 4, 1,  //left
-        3, 2, 4}; //bottom
+        1, 3, 0,  //front
+        2, 1, 0,  //back
+        2, 3, 0,  //left
+        2, 1, 3}; //bottom
 
     mIVBO.loadData(indices, 12);
 
@@ -68,6 +68,10 @@ Asteroid::~Asteroid()
 
 void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
+
+    glColor3f(139,69,19);
+
+
     CGE::Matrix4x4<GLfloat> matrix(inMatrix);
     matrix.translate(mPosition[0], mPosition[1], mFieldDepth);
     matrix.rotateZ(mRotation - 90.0f);
@@ -79,7 +83,6 @@ void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 
     mVertexVBO.bind();
     glVertexPointer(3, GL_FLOAT, 0, 0);
-
     mIVBO.draw();
 
     glDisableClientState(GL_VERTEX_ARRAY);
