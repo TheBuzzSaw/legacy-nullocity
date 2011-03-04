@@ -26,6 +26,7 @@ void Entity::onDeath()
 
 void Entity::onCollision(const Entity& inEntity)
 {
+    cout << "Collision!";
 }
 
 void Entity::applyForce(vec2f inAcceleration, float inMass)

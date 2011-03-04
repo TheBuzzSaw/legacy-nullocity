@@ -4,6 +4,8 @@
 #include <CGE/Graphics.h>
 #include <CGE/Matrix4x4.h>
 #include <CGE/Vectors.h>
+#include <iostream>
+using namespace std;
 
 class Entity
 {
@@ -15,6 +17,10 @@ class Entity
         virtual void onPulse();
         virtual void onDeath(); // when HP hit zero
         virtual void onCollision(const Entity& inEntity);
+
+        inline float getRadius(){return mRadius;}
+        inline float getPosX(){return mPosition[0];}
+        inline float getPosY(){return mPosition[1];}
 
         void applyForce(vec2f inAcceleration, float inMass);
         void applyAcceleration(vec2f inAcceleration);

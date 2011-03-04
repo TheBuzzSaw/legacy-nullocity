@@ -35,6 +35,7 @@ Asteroid::Asteroid(vec2f pPosition)
     mRotation = 0.0f;
     mVelocity[0] = 0.0f;
     mVelocity[1] = 0.0f;
+    mRadius = 1.0f;
 
     mScale = 1.0f;
 
@@ -72,6 +73,7 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
     mRotation = pRotation;
     mVelocity[0] = pVelocity[0];
     mVelocity[1] = pVelocity[1];
+    mRadius = 1.0f;
 
     mScale = 1.0f;
 

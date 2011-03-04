@@ -31,6 +31,9 @@ class NullocityGameModule : public CGE::ManagedModule
         virtual void onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode);
         virtual void onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode);
 
+        //game related functions
+        void checkCollisions();
+
     private:
         list<Entity*> GameEntity;
         Ship *PlayerShip;

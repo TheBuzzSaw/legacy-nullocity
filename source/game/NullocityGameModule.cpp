@@ -1,6 +1,7 @@
 #include "NullocityGameModule.h"
 using namespace std;
 
+
 NullocityGameModule::NullocityGameModule()
 {
 
@@ -22,6 +23,8 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
     vec2f rockPos;
     rockPos[0] = 4;
     rockPos[1] = 4;
+
+    shoot = false;
 
     GameEntity.push_back(new Asteroid(rockPos));
 }
@@ -79,6 +82,8 @@ void NullocityGameModule::onPulse()
     {
         (*iter)->onPulse();
     }
+
+    checkCollisions();
 
     //not working
     if (shoot)
@@ -218,5 +223,32 @@ void NullocityGameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
         }
 
         default: {}
+    }
+}
+
+void NullocityGameModule::checkCollisions()
+{
+    list<Entity*>::iterator iterOne;
+    list<Entity*>::iterator iterTwo;
+
+    iterOne = GameEntity.begin();
+    iterTwo = iterOne;
+
+    for (;iterOne != GameEntity.end(); iterOne++)
+    {
+        for (;iterTwo != GameEntity.end(); iterTwo++)
+        {
+            if (iterTwo != iterOne)
+            {
+                float a = (*iterOne)->getPosX() - (*iterTwo)->getPosX();
+                float b = (*iterOne)->getPosY() - (*iterTwo)->getPosY();
+                float dist = sqrt(a * a + b * b);
+                float collisionDist = (*iterOne)->getRadius() + (*iterOne)->getRadius();
+                if (dist <= collisionDist)
+                {
+                    (*iterOne)->onCollision(**iterTwo);
+                }
+            }
+        }
     }
 }

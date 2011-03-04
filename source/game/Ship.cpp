@@ -65,6 +65,8 @@ Ship::Ship(float pFieldDepth) : mFieldDepth(pFieldDepth)
     mVelocity[0] = 0;
     mVelocity[1] = 0;
 
+    mRadius = 1.0f;
+
     mDeltaRoll = 2;
     mRoll = 0;
     mScale = 1;
@@ -134,16 +136,6 @@ void Ship::onPulse()
     Entity::onPulse();
 }
 
-void Ship::onDeath()
-{
-    //Nothing yet
-}
-
-void Ship::onCollision(const Entity& inEntity)
-{
-    //Nothing yet
-}
-
 void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
     CGE::Matrix4x4<GLfloat> matrix(inMatrix);
@@ -170,6 +162,6 @@ void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 
 void Ship::fire()
 {
-    //Ima firin mah Lazer!!!!!
+    cout << "Ima firin mah Lazer!!!!!";
     weaponSound.play();
 }

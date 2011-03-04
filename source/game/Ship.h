@@ -3,6 +3,8 @@
 #include <CGE/Sound.h>
 #include <CGE/IndexVBO.h>
 #include "Entity.h"
+#include "iostream"
+using namespace std;
 
 class Ship : public Entity
 {
@@ -12,8 +14,6 @@ class Ship : public Entity
 
         virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
         virtual void onPulse();
-        virtual void onDeath(); // when HP hit zero
-        virtual void onCollision(const Entity& inEntity);
 
         void fire();
 
