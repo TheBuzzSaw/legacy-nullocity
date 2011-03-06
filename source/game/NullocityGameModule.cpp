@@ -16,28 +16,28 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
 {
     //setup data
 
-    PlayerShip = new Ship(-60);
+    mPlayer = new Ship(-60);
 
 
-    GameEntity.push_back(PlayerShip);
+    mEntities.push_back(mPlayer);
     vec2f rockPos;
     rockPos[0] = 4;
     rockPos[1] = 4;
 
     shoot = false;
 
-    GameEntity.push_back(new Asteroid(rockPos));
+    mEntities.push_back(new Asteroid(rockPos));
 }
 
 void NullocityGameModule::onUnload()
 {
     //kill data :(
 
-    PlayerShip = NULL;
+    mPlayer = NULL;
 
     list<Entity*>::iterator iter;
 
-    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    for (iter = mEntities.begin(); iter != mEntities.end(); iter++)
     {
         delete (*iter);
         (*iter) = NULL;
@@ -69,7 +69,7 @@ void NullocityGameModule::onLoop()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     list<Entity*>::iterator iter;
-    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    for (iter = mEntities.begin(); iter != mEntities.end(); iter++)
     {
         (*iter)->render(mModelView);
     }
@@ -78,7 +78,7 @@ void NullocityGameModule::onLoop()
 void NullocityGameModule::onPulse()
 {
     list<Entity*>::iterator iter;
-    for (iter = GameEntity.begin(); iter != GameEntity.end(); iter++)
+    for (iter = mEntities.begin(); iter != mEntities.end(); iter++)
     {
         (*iter)->onPulse();
     }
@@ -88,7 +88,7 @@ void NullocityGameModule::onPulse()
     //not working
     if (shoot)
     {
-        PlayerShip->fire();
+        mPlayer->fire();
         CGE::Sound lazer("data/audio/dwang.ogg");
         lazer.setVolume(0.5);
         lazer.play();
@@ -121,37 +121,37 @@ void NullocityGameModule::onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode
 
         case SDLK_w:
         {
-            PlayerShip->setThrust(1.0f);
+            mPlayer->setThrust(1.0f);
             break;
         }
 
         case SDLK_s:
         {
-            PlayerShip->setThrust(-1.0f);
+            mPlayer->setThrust(-1.0f);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            PlayerShip->setStrafe(-1.0f);
+            mPlayer->setStrafe(-1.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            PlayerShip->setStrafe(1.0f);
+            mPlayer->setStrafe(1.0f);
             break;
         }
 
         case SDLK_d:
         {
-            PlayerShip->setTurn(-1.0f);
+            mPlayer->setTurn(-1.0f);
             break;
         }
 
         case SDLK_a:
         {
-            PlayerShip->setTurn(1.0f);
+            mPlayer->setTurn(1.0f);
             break;
         }
 
@@ -173,45 +173,45 @@ void NullocityGameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
     {
          case SDLK_w:
         {
-            if (PlayerShip->getThrust() > 0.0f)
-                PlayerShip->setThrust(0.0f);
+            if (mPlayer->getThrust() > 0.0f)
+                mPlayer->setThrust(0.0f);
             break;
         }
 
         case SDLK_s:
         {
-            if (PlayerShip->getThrust() < 0.0f)
-                PlayerShip->setThrust(0.0f);
+            if (mPlayer->getThrust() < 0.0f)
+                mPlayer->setThrust(0.0f);
             break;
         }
 
         case SDLK_RIGHT:
         {
-            if (PlayerShip->getStrafe() < 0.0f)
-                PlayerShip->setStrafe(0.0f);
+            if (mPlayer->getStrafe() < 0.0f)
+                mPlayer->setStrafe(0.0f);
             break;
         }
 
         case SDLK_LEFT:
         {
-            if (PlayerShip->getStrafe() > 0.0f)
-                PlayerShip->setStrafe(0.0f);
+            if (mPlayer->getStrafe() > 0.0f)
+                mPlayer->setStrafe(0.0f);
             break;
         }
 
         case SDLK_d:
         {
 
-            if (PlayerShip->getTurn() < 0.0f)
-                PlayerShip->setTurn(0.0f);
+            if (mPlayer->getTurn() < 0.0f)
+                mPlayer->setTurn(0.0f);
             break;
         }
 
         case SDLK_a:
         {
 
-            if (PlayerShip->getTurn() > 0.0f)
-                PlayerShip->setTurn(0.0f);
+            if (mPlayer->getTurn() > 0.0f)
+                mPlayer->setTurn(0.0f);
             break;
         }
 
@@ -228,26 +228,24 @@ void NullocityGameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
 
 void NullocityGameModule::checkCollisions()
 {
-    list<Entity*>::iterator iterOne;
-    list<Entity*>::iterator iterTwo;
-
-    iterOne = GameEntity.begin();
-    iterTwo = iterOne;
-
-    for (;iterOne != GameEntity.end(); iterOne++)
+    for (list<Entity*>::iterator i = mEntities.begin(); i != mEntities.end();
+        ++i)
     {
-        for (;iterTwo != GameEntity.end(); iterTwo++)
+        list<Entity*>::iterator j = i;
+        ++j;
+
+        for (; j != mEntities.end(); ++j)
         {
-            if (iterTwo != iterOne)
+            if (i != j)
             {
-                float a = (*iterOne)->getPosX() - (*iterTwo)->getPosX();
-                float b = (*iterOne)->getPosY() - (*iterTwo)->getPosY();
+                float a = (*i)->getPosX() - (*j)->getPosX();
+                float b = (*i)->getPosY() - (*j)->getPosY();
                 float dist = sqrt(a * a + b * b);
-                float collisionDist = (*iterOne)->getRadius() + (*iterOne)->getRadius();
+                float collisionDist = (*i)->getRadius() + (*j)->getRadius();
                 if (dist <= collisionDist)
                 {
-                    (*iterOne)->onCollision(**iterTwo);
-                    (*iterTwo)->onCollision(**iterOne);
+                    (*i)->onCollision(**j);
+                    (*j)->onCollision(**i);
                 }
             }
         }

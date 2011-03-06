@@ -41,19 +41,19 @@ Asteroid::Asteroid(vec2f pPosition)
 
 Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
 {
-    GLfloat vertices[12]{
+    GLfloat vertices[12] = {
          0.0f,  1.0f,  0.0f, //0 top
          1.0f, -1.0f,  0.0f, //1 right
         -1.0f, -1.0f, -1.0f, //2 left far
-        -1.0f, -1.0f,  1.0f};//3 left near
+        -1.0f, -1.0f,  1.0f };//3 left near
 
     mVertexVBO.loadData(vertices, 4, 3);
 
-    GLfloat indices[12]{
+    GLfloat indices[12] = {
         1, 3, 0,  //front
         2, 1, 0,  //back
         2, 3, 0,  //left
-        2, 1, 3}; //bottom
+        2, 1, 3 }; //bottom
 
     mIVBO.loadData(indices, 12);
 
@@ -61,7 +61,7 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
         0.54f, 0.27f, 0.07f, 1.0f,
         0.54f, 0.27f, 0.07f, 1.0f,
         0.54f, 0.27f, 0.07f, 1.0f,
-        0.54f, 0.27f, 0.07f, 1.0f};
+        0.54f, 0.27f, 0.07f, 1.0f };
 
     mColorVBO.loadData(colors,4,4);
 

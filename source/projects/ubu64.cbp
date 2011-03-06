@@ -48,6 +48,8 @@
 			<Add library="lua5.1" />
 			<Add library="curl" />
 		</Linker>
+		<Unit filename="../CGE/Camera.cpp" />
+		<Unit filename="../CGE/Camera.h" />
 		<Unit filename="../CGE/ClusterVBO.cpp" />
 		<Unit filename="../CGE/ClusterVBO.h" />
 		<Unit filename="../CGE/CubeMap.cpp" />

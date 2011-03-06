@@ -1,5 +1,5 @@
 // Ryan Muse's beginning module for the game Nullocity using the
-// Cyborus 3D Graphics engine (Kengine? Kelgine? hehe :P)
+// CYBORUS 3D Graphics engine (Kengine? Kelgine? hehe :P)
 
 #ifndef NULLOCITYMODULE_H
 #define NULLOCITYMODULE_H
@@ -35,8 +35,8 @@ class NullocityGameModule : public CGE::ManagedModule
         void checkCollisions();
 
     private:
-        list<Entity*> GameEntity;
-        Ship *PlayerShip;
+        list<Entity*> mEntities;
+        Ship* mPlayer;
 
         bool shoot;
         CGE::Matrix4x4<GLfloat> mProjection;

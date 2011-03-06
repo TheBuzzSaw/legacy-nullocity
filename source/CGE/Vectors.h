@@ -4,14 +4,6 @@
 #include <cstring>
 #include <cmath>
 
-typedef float vec2f[2];
-typedef float vec3f[3];
-typedef float vec4f[4];
-
-typedef double vec2d[2];
-typedef double vec3d[3];
-typedef double vec4d[4];
-
 namespace CGE
 {
     template<typename T, size_t N>
@@ -91,6 +83,44 @@ namespace CGE
             + inLVector[1] * inRVector[1]
             + inLVector[2] * inRVector[2];
     }
+
+    /// /// /// new vector object /// /// ///
+
+    template<typename T, size_t N>
+    class Vector
+    {
+        public:
+            inline Vector() { memset(mData, 0, sizeof(T) * N); }
+            inline Vector(const Vector& inVector)
+            {
+                memcpy(mData, inVector.mData, sizeof(T) * N);
+            }
+
+            inline Vector(const T* inVector)
+            {
+                memcpy(mData, inVector, sizeof(T) * N);
+            }
+
+            inline operator T*() { return mData; }
+            inline operator const T*() const { return mData; }
+
+            inline Vector& operator=(const T* inVector)
+            {
+                memcpy(mData, inVector, sizeof(T) * N);
+                return *this;
+            }
+
+        private:
+            T mData[N];
+    };
 }
+
+typedef CGE::Vector<float, 2> vec2f;
+typedef CGE::Vector<float, 3> vec3f;
+typedef CGE::Vector<float, 4> vec4f;
+
+typedef CGE::Vector<double, 2> vec2d;
+typedef CGE::Vector<double, 3> vec3d;
+typedef CGE::Vector<double, 4> vec4d;
 
 #endif

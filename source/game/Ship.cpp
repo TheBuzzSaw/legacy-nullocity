@@ -9,6 +9,7 @@ Ship::Ship(float pFieldDepth) : mFieldDepth(pFieldDepth)
          1.0f, -1.0f, 0.25f,  //2 rear right
         -1.0f, -1.0f, 0.25f,  //3 rear left
         -1.0f, -0.5f, 0.25f,  //4 left
+
         //bottom
          0.0f,  1.0f, -0.25f, //5 front
          1.0f, -0.5f, -0.25f, //6 right
@@ -118,21 +119,27 @@ void Ship::rollReset()
 void Ship::onPulse()
 {
     mRotation += mTurn;
-    mForce[0] = mThrust * cos(mRotation * M_PI/180.0f) + mStrafe * sin(-mRotation * M_PI/180.0f);
-    mForce[1] = mThrust * sin(mRotation * M_PI/180.0f) + mStrafe * cos(-mRotation * M_PI/180.0f);
-    applyForce(mForce,0.5f);
+    mForce[0] = mThrust * cos(mRotation * M_PI / 180.0f) + mStrafe
+        * sin(-mRotation * M_PI / 180.0f);
+    mForce[1] = mThrust * sin(mRotation * M_PI / 180.0f) + mStrafe
+        * cos(-mRotation * M_PI / 180.0f);
 
-    if (mThrust > 0)
+    applyForce(mForce, 0.5f);
+
+    if (mThrust > 0.0f)
     {
-        if (mTurn > 0)
+        if (mTurn > 0.0f)
             rollLeft();
-        else if (mTurn < 0)
+        else if (mTurn < 0.0f)
             rollRight();
         else
             rollReset();
     }
     else
+    {
         rollReset();
+    }
+
     Entity::onPulse();
 }
 

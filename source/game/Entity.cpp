@@ -26,8 +26,7 @@ void Entity::onDeath()
 
 void Entity::onCollision(const Entity& inEntity)
 {
-    cout << "Collision!";
-    cout.flush();
+    cout << "Collision!" << endl;
     float d = mRadius + inEntity.mRadius;
     float nx = (mPosition[0] - inEntity.mPosition[0]) / d;
     float ny = (mPosition[1] - inEntity.mPosition[1]) / d;
