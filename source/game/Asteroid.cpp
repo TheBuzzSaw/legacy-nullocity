@@ -1,9 +1,5 @@
 #include "Asteroid.h"
 
-Asteroid::Asteroid()
-{
-}
-
 Asteroid::Asteroid(vec2f pPosition)
 {
     GLfloat vertices[12] = {

@@ -97,6 +97,7 @@
 		<Unit filename="../CGE/Texture2D.h" />
 		<Unit filename="../CGE/Thread.cpp" />
 		<Unit filename="../CGE/Thread.h" />
+		<Unit filename="../CGE/Tools.cpp" />
 		<Unit filename="../CGE/Vectors.h" />
 		<Unit filename="../CGE/VertexArrayObject.cpp" />
 		<Unit filename="../CGE/VertexArrayObject.h" />

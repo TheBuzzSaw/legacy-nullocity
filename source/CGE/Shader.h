@@ -29,7 +29,6 @@ namespace CGE
 
             GLuint mHandle;
 
-            static char* fileToBuffer(const char* inFile);
             static const char* mFile;
     };
 }

@@ -15,7 +15,7 @@ namespace CGE
     void IndexVBO::draw(GLenum inMode) const
     {
         bind();
-        glDrawElements(inMode, mSize, GL_UNSIGNED_INT, 0);
+        glDrawElements(inMode, mSize * mValuesPerUnit, mType, 0);
     }
 
 }

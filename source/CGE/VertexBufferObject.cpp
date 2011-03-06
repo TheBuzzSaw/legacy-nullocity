@@ -28,10 +28,10 @@ namespace CGE
         GLuint inValuesPerUnit)
     {
         bind();
-        mSize = inSize * inValuesPerUnit;
-        glBufferData(mTarget, mSize * mTypeSize, inData, mUsage);
-
+        mSize = inSize;
         mValuesPerUnit = inValuesPerUnit;
+        glBufferData(mTarget, mSize * mValuesPerUnit * mTypeSize, inData,
+            mUsage);
     }
 
     void VertexBufferObject::vertexAttribPointer(GLuint inIndex) const
