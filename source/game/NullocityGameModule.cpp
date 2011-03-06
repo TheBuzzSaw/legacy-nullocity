@@ -16,7 +16,7 @@ void NullocityGameModule::onLoad(CGE::PropertyList& inList)
 {
     //setup data
 
-    mPlayer = new Ship(-60);
+    mPlayer = new Ship;
 
 
     mEntities.push_back(mPlayer);
@@ -53,6 +53,8 @@ void NullocityGameModule::onOpen()
     glFrontFace(GL_CW);
     glCullFace(GL_BACK);
 
+    mCamera.setDistance(60.0f);
+
     glClearColor(0.0f,0.0f,0.05f,0.0f);
 }
 
@@ -67,6 +69,8 @@ void NullocityGameModule::onClose()
 void NullocityGameModule::onLoop()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    mModelView = mCamera.matrix();
 
     list<Entity*>::iterator iter;
     for (iter = mEntities.begin(); iter != mEntities.end(); iter++)
@@ -93,6 +97,8 @@ void NullocityGameModule::onPulse()
         lazer.setVolume(0.5);
         lazer.play();
     }
+
+    mCamera.update();
 }
 
 void NullocityGameModule::onResize(int inWidth, int inHeight)

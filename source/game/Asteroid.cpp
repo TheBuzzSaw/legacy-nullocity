@@ -35,8 +35,6 @@ Asteroid::Asteroid(vec2f pPosition)
     mMass = 1.0f;
 
     mScale = 1.0f;
-
-    mFieldDepth = -60;//remove after a camera is made
 }
 
 Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
@@ -74,8 +72,6 @@ Asteroid::Asteroid(vec2f pPosition, float pRotation, vec2f pVelocity)
     mMass = 1.0f;
 
     mScale = 1.0f;
-
-    mFieldDepth = -60;//remove after a camera is made
 }
 Asteroid::~Asteroid()
 {
@@ -85,7 +81,7 @@ Asteroid::~Asteroid()
 void Asteroid::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
     CGE::Matrix4x4<GLfloat> matrix(inMatrix);
-    matrix.translate(mPosition[0], mPosition[1], mFieldDepth);
+    matrix.translate(mPosition[0], mPosition[1], 0.0f);
     matrix.rotateZ(mRotation - 90.0f);
     matrix.scale(mScale);
     glLoadMatrixf(matrix);

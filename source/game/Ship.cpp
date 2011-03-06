@@ -1,6 +1,6 @@
 #include "Ship.h"
 
-Ship::Ship(float pFieldDepth) : mFieldDepth(pFieldDepth)
+Ship::Ship()
 {
     GLfloat vertices[30] = {
         //top
@@ -146,7 +146,7 @@ void Ship::onPulse()
 void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
     CGE::Matrix4x4<GLfloat> matrix(inMatrix);
-    matrix.translate(mPosition[0], mPosition[1], mFieldDepth);
+    matrix.translate(mPosition[0], mPosition[1], 0.0f);
     matrix.rotateZ(mRotation - 90.0f);
     matrix.rotateY(mRoll);
     matrix.scale(mScale);

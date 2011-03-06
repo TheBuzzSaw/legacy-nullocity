@@ -6,6 +6,7 @@
 #include <CGE/ManagedModule.h>
 #include <CGE/PropertyList.h>
 #include <CGE/Matrix4x4.h>
+#include <CGE/Camera.h>
 #include "Ship.h"
 #include "Asteroid.h"
 #include "Entity.h"
@@ -37,6 +38,7 @@ class NullocityGameModule : public CGE::ManagedModule
     private:
         list<Entity*> mEntities;
         Ship* mPlayer;
+        CGE::Camera mCamera;
 
         bool shoot;
         CGE::Matrix4x4<GLfloat> mProjection;
