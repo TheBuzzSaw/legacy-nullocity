@@ -1,9 +1,9 @@
-source/projects/*.html
-source/projects/*.depend
-source/projects/*.layout
-source/projects/*.cbTemp
-source/projects/obj/
-nullocity-ubu*
+/projects/*.html
+/projects/*.depend
+/projects/*.layout
+/projects/*.cbTemp
+/projects/obj/
 data/logs/init.txt
 *.dll
 *.exe
+/nullocity-*

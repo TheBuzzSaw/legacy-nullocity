@@ -1,5 +1,5 @@
 #include <CGE/Engine.h>
-#include "NullocityGameModule.h"
+#include "GameModule.h"
 
 int main(int argc, char** argv)
 {
@@ -9,7 +9,7 @@ int main(int argc, char** argv)
     s.sound = false; // disabled to prevent long load times
 
     CGE::Engine e(s);
-    e.manage(new NullocityGameModule);
+    e.manage(new GameModule);
 
     return 0;
 }
