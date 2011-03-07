@@ -3,7 +3,9 @@
 /projects/*.layout
 /projects/*.cbTemp
 /projects/obj/
+/projects/xcode/build/
 data/logs/init.txt
 *.dll
 *.exe
 /nullocity-*
+/Nullocity
