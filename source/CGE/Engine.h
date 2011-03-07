@@ -17,17 +17,21 @@ namespace CGE
                 Settings() :
                     windowTitle(NULL),
                     windowTitle2(NULL),
+                    iconPath(NULL),
+                    sound(true),
                     frameLength(25) {}
 
                 const char* windowTitle;
                 const char* windowTitle2;
+                const char* iconPath;
+                bool sound;
                 Uint32 frameLength;
             };
 
             Engine(const Settings& inSettings = Settings());
             ~Engine();
 
-            void run(Module* inModule);
+            void run(Module& inModule);
             void manage(ManagedModule* inModule);
 
         private:

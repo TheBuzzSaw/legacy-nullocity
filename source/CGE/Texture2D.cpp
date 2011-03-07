@@ -18,8 +18,8 @@ namespace CGE
     void Texture2D::loadImage(const Image& inImage)
     {
         const GLenum params1[] = {
-            GL_TEXTURE_WRAP_S, GL_REPEAT,
-            GL_TEXTURE_WRAP_T, GL_REPEAT,
+            GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE,
+            GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE,
             GL_TEXTURE_MAG_FILTER, GL_LINEAR,
             0 };
 

@@ -23,7 +23,6 @@ class Asteroid : public Entity
 
         Asteroid();
 
-        float mFieldDepth;
         float mScale;
 
         CGE::VertexBufferObject mVertexVBO;

@@ -8,6 +8,8 @@ namespace CGE
     class Module
     {
         public:
+            friend class Engine;
+
             Module();
             virtual ~Module();
 

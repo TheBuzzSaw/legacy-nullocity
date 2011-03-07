@@ -1,7 +1,7 @@
 #include "Shader.h"
 #include "Exception.h"
 
-#include <cstdio>
+#include "Tools.h"
 
 namespace CGE
 {
@@ -62,28 +62,5 @@ namespace CGE
 
             throw Exception(functionName, message);
         }
-    }
-
-    char* Shader::fileToBuffer(const char* inFile)
-    {
-        FILE *f;
-
-        if (!(f = fopen(inFile, "r"))) return NULL;
-
-        fseek(f, 0, SEEK_END);
-        size_t length = ftell(f);
-
-        fseek(f, 0, SEEK_SET);
-
-        char *outBuffer = static_cast<char*>(malloc((length + 1)
-            * sizeof(char)));
-
-        if (!outBuffer) return NULL;
-
-        size_t r = fread(outBuffer, sizeof(char), length, f);
-        outBuffer[length] = '\0';
-        fclose(f);
-
-        return outBuffer;
     }
 }

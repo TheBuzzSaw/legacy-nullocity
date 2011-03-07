@@ -12,7 +12,6 @@ namespace CGE
 
     void Module::onOpen()
     {
-        mRunning = true;
         glClearColor(0.0f, 0.0f, 0.5f, 1.0f);
     }
 

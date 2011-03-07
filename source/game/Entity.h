@@ -18,9 +18,9 @@ class Entity
         virtual void onDeath(); // when HP hit zero
         virtual void onCollision(Entity& inEntity, int recurse = 1);
 
-        inline float getRadius(){return mRadius;}
-        inline float getPosX(){return mPosition[0];}
-        inline float getPosY(){return mPosition[1];}
+        inline float getRadius() { return mRadius; }
+        inline float getPosX() { return mPosition[0]; }
+        inline float getPosY() { return mPosition[1]; }
 
         void applyForce(vec2f inAcceleration, float inMass);
         void applyAcceleration(vec2f inAcceleration);
@@ -42,7 +42,7 @@ class Entity
 
         Entity(const Entity& inEntity)
         {
-
+            // no copying
         }
 
         Entity& operator=(const Entity& inEntity)

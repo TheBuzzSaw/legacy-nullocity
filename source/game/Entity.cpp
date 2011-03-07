@@ -26,8 +26,7 @@ void Entity::onDeath()
 
 void Entity::onCollision(Entity& inEntity, int recurse)
 {
-    cout << "Collision!";
-    cout.flush();
+    cout << "Collision!" << endl;
     float a = inEntity.mPosition[0] - mPosition[0];
     float b = inEntity.mPosition[1] - mPosition[1];
 

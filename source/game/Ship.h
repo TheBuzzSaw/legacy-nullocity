@@ -9,7 +9,7 @@ using namespace std;
 class Ship : public Entity
 {
     public:
-        Ship(float pFieldDepth = -60.0f);
+        Ship();
         ~Ship();
 
         virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
@@ -39,7 +39,7 @@ class Ship : public Entity
         float mMaxStrafeThrust;
         float mMaxTurnSpeed;
 
-        vec2f  mForce;
+        vec2f mForce;
 
         int mRoll;
         int mDeltaRoll;
@@ -48,6 +48,4 @@ class Ship : public Entity
         CGE::VertexBufferObject mVertexVBO;
         CGE::IndexVBO mIVBO;
         CGE::VertexBufferObject mColorVBO;
-
-        float mFieldDepth; // remove after setting up the camera.
 };
