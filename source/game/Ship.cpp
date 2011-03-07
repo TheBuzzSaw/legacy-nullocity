@@ -47,16 +47,16 @@ Ship::Ship(float pFieldDepth) : mFieldDepth(pFieldDepth)
 
     mColorVBO.loadData(colors, 10, 4);
 
-    mMass = 0.1f;
+    mMass = 1.0f;
     mRotation = 90.0f;
 
     mStrafe = 0.0f;
     mThrust = 0.0f;
     mTurn = 0.0f;
 
-    mMaxForwardThrust = 0.005f;
-    mMaxReverseThrust = 0.003f;
-    mMaxStrafeThrust = 0.003f;
+    mMaxForwardThrust = 0.05f;
+    mMaxReverseThrust = 0.03f;
+    mMaxStrafeThrust = 0.03f;
     mMaxTurnSpeed = 2.0f;
 
     mPosition[0] = 0;

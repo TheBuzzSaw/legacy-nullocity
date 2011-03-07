@@ -247,7 +247,6 @@ void NullocityGameModule::checkCollisions()
                 if (dist <= collisionDist)
                 {
                     (*iterOne)->onCollision(**iterTwo);
-                    (*iterTwo)->onCollision(**iterOne);
                 }
             }
         }

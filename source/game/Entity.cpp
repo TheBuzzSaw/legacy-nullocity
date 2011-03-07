@@ -24,16 +24,24 @@ void Entity::onDeath()
 {
 }
 
-void Entity::onCollision(const Entity& inEntity)
+void Entity::onCollision(Entity& inEntity, int recurse)
 {
     cout << "Collision!";
     cout.flush();
-    float d = mRadius + inEntity.mRadius;
-    float nx = (mPosition[0] - inEntity.mPosition[0]) / d;
-    float ny = (mPosition[1] - inEntity.mPosition[1]) / d;
+    float a = inEntity.mPosition[0] - mPosition[0];
+    float b = inEntity.mPosition[1] - mPosition[1];
+
+    float d = sqrt(a * a + b * b);
+    float nx = (inEntity.mPosition[0] - mPosition[0]) / d;
+    float ny = (inEntity.mPosition[1] - mPosition[1]) / d;
+    float n = sqrt(nx * nx + ny * ny);
     float p = 2 * (mVelocity[0] * nx + mVelocity[1] * ny - inEntity.mVelocity[0] * nx - inEntity.mVelocity[1] * ny) / (mMass + inEntity.mMass);
-    mVelocity[0] = mVelocity[0] - p * mMass * nx;
-    mVelocity[1] = mVelocity[1] - p * mMass * ny;
+
+    if (recurse)
+        inEntity.onCollision((*this), 0);
+
+    mVelocity[0] = mVelocity[0] - p * inEntity.mMass * nx;
+    mVelocity[1] = mVelocity[1] - p * inEntity.mMass * ny;
 
 }
 
