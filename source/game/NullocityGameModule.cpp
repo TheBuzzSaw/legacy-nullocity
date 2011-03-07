@@ -1,7 +1,6 @@
 #include "NullocityGameModule.h"
 using namespace std;
 
-
 NullocityGameModule::NullocityGameModule()
 {
 
