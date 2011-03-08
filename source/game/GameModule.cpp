@@ -160,7 +160,7 @@ void GameModule::onKeyDown(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
             break;
         }
 
-        case SDLK_SPACE:
+        //case SDLK_SPACE:
         {
             shoot = true;
             break;
@@ -221,7 +221,7 @@ void GameModule::onKeyUp(SDLKey inSym, SDLMod inMod, Uint16 inUnicode)
         }
 
 
-        case SDLK_SPACE:
+        //case SDLK_SPACE:
         {
             shoot = false;
             break;

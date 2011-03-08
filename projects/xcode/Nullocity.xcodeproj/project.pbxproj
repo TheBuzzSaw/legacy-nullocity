@@ -47,12 +47,127 @@
 		6BCC1D09132495930008B2E7 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D08132495930008B2E7 /* SDL_ttf.framework */; };
 		6BCC1D0B132495930008B2E7 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0A132495930008B2E7 /* SDL.framework */; };
 		6BCC1D0D132495940008B2E7 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0C132495940008B2E7 /* libcurl.dylib */; };
+		6BCC66621325D18E00D1CF65 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1CFE132495930008B2E7 /* Cocoa.framework */; };
+		6BCC66631325D18E00D1CF65 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D00132495930008B2E7 /* OpenGL.framework */; };
+		6BCC66641325D18E00D1CF65 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D02132495930008B2E7 /* SDL_image.framework */; };
+		6BCC66651325D18E00D1CF65 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D04132495930008B2E7 /* SDL_mixer.framework */; };
+		6BCC66661325D18E00D1CF65 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D08132495930008B2E7 /* SDL_ttf.framework */; };
+		6BCC66671325D18E00D1CF65 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0A132495930008B2E7 /* SDL.framework */; };
+		6BCC66681325D18E00D1CF65 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0C132495940008B2E7 /* libcurl.dylib */; };
+		6BCC66691325D18E00D1CF65 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE48D6B1325CA71006199E2 /* SDL_net.framework */; };
+		6BCC666A1325D19A00D1CF65 /* SDLMain.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CFB132495410008B2E7 /* SDLMain.h */; };
+		6BCC666B1325D19A00D1CF65 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CFC132495410008B2E7 /* SDLMain.m */; };
+		6BCC666C1325D1AF00D1CF65 /* NetworkStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE48D721325CAF5006199E2 /* NetworkStream.cpp */; };
+		6BCC666D1325D1AF00D1CF65 /* NetworkStream.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BE48D731325CAF5006199E2 /* NetworkStream.h */; };
+		6BCC666E1325D1AF00D1CF65 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C91132494F10008B2E7 /* Camera.cpp */; };
+		6BCC666F1325D1AF00D1CF65 /* Camera.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C92132494F10008B2E7 /* Camera.h */; };
+		6BCC66701325D1AF00D1CF65 /* ClusterVBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C93132494F10008B2E7 /* ClusterVBO.cpp */; };
+		6BCC66711325D1AF00D1CF65 /* ClusterVBO.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C94132494F10008B2E7 /* ClusterVBO.h */; };
+		6BCC66721325D1AF00D1CF65 /* CubeMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C95132494F10008B2E7 /* CubeMap.cpp */; };
+		6BCC66731325D1AF00D1CF65 /* CubeMap.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C96132494F10008B2E7 /* CubeMap.h */; };
+		6BCC66741325D1AF00D1CF65 /* Download.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C97132494F10008B2E7 /* Download.cpp */; };
+		6BCC66751325D1AF00D1CF65 /* Download.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C98132494F10008B2E7 /* Download.h */; };
+		6BCC66761325D1AF00D1CF65 /* Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C99132494F10008B2E7 /* Engine.cpp */; };
+		6BCC66771325D1AF00D1CF65 /* Engine.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9A132494F10008B2E7 /* Engine.h */; };
+		6BCC66781325D1AF00D1CF65 /* Exception.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9B132494F10008B2E7 /* Exception.cpp */; };
+		6BCC66791325D1AF00D1CF65 /* Exception.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9C132494F10008B2E7 /* Exception.h */; };
+		6BCC667A1325D1AF00D1CF65 /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9D132494F10008B2E7 /* Font.cpp */; };
+		6BCC667B1325D1AF00D1CF65 /* Font.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9E132494F10008B2E7 /* Font.h */; };
+		6BCC667C1325D1AF00D1CF65 /* FragmentShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1C9F132494F10008B2E7 /* FragmentShader.cpp */; };
+		6BCC667D1325D1AF00D1CF65 /* FragmentShader.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA0132494F10008B2E7 /* FragmentShader.h */; };
+		6BCC667E1325D1AF00D1CF65 /* Graphics.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA1132494F10008B2E7 /* Graphics.h */; };
+		6BCC667F1325D1AF00D1CF65 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA2132494F10008B2E7 /* Image.cpp */; };
+		6BCC66801325D1AF00D1CF65 /* Image.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA3132494F10008B2E7 /* Image.h */; };
+		6BCC66811325D1AF00D1CF65 /* IndexVBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA4132494F10008B2E7 /* IndexVBO.cpp */; };
+		6BCC66821325D1AF00D1CF65 /* IndexVBO.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA5132494F10008B2E7 /* IndexVBO.h */; };
+		6BCC66831325D1AF00D1CF65 /* LuaMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA6132494F10008B2E7 /* LuaMachine.cpp */; };
+		6BCC66841325D1AF00D1CF65 /* LuaMachine.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA7132494F10008B2E7 /* LuaMachine.h */; };
+		6BCC66851325D1AF00D1CF65 /* ManagedModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA8132494F10008B2E7 /* ManagedModule.cpp */; };
+		6BCC66861325D1AF00D1CF65 /* ManagedModule.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CA9132494F10008B2E7 /* ManagedModule.h */; };
+		6BCC66871325D1AF00D1CF65 /* Matrix4x4.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAA132494F10008B2E7 /* Matrix4x4.h */; };
+		6BCC66881325D1AF00D1CF65 /* Module.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAB132494F10008B2E7 /* Module.cpp */; };
+		6BCC66891325D1AF00D1CF65 /* Module.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAC132494F10008B2E7 /* Module.h */; };
+		6BCC668A1325D1AF00D1CF65 /* Music.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAD132494F10008B2E7 /* Music.cpp */; };
+		6BCC668B1325D1AF00D1CF65 /* Music.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAE132494F10008B2E7 /* Music.h */; };
+		6BCC668C1325D1AF00D1CF65 /* Mutex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CAF132494F10008B2E7 /* Mutex.cpp */; };
+		6BCC668D1325D1AF00D1CF65 /* Mutex.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB0132494F10008B2E7 /* Mutex.h */; };
+		6BCC668E1325D1AF00D1CF65 /* Platforms.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB3132494F10008B2E7 /* Platforms.h */; };
+		6BCC668F1325D1AF00D1CF65 /* Program.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB4132494F10008B2E7 /* Program.h */; };
+		6BCC66901325D1AF00D1CF65 /* PropertyList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB5132494F10008B2E7 /* PropertyList.cpp */; };
+		6BCC66911325D1AF00D1CF65 /* PropertyList.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB6132494F10008B2E7 /* PropertyList.h */; };
+		6BCC66921325D1AF00D1CF65 /* ResourceManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB7132494F10008B2E7 /* ResourceManager.h */; };
+		6BCC66931325D1AF00D1CF65 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB8132494F10008B2E7 /* Shader.cpp */; };
+		6BCC66941325D1AF00D1CF65 /* Shader.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CB9132494F10008B2E7 /* Shader.h */; };
+		6BCC66951325D1AF00D1CF65 /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBA132494F10008B2E7 /* Sound.cpp */; };
+		6BCC66961325D1AF00D1CF65 /* Sound.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBB132494F10008B2E7 /* Sound.h */; };
+		6BCC66971325D1AF00D1CF65 /* StopWatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBC132494F10008B2E7 /* StopWatch.cpp */; };
+		6BCC66981325D1AF00D1CF65 /* StopWatch.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBD132494F10008B2E7 /* StopWatch.h */; };
+		6BCC66991325D1AF00D1CF65 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBE132494F10008B2E7 /* Texture.cpp */; };
+		6BCC669A1325D1AF00D1CF65 /* Texture.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CBF132494F10008B2E7 /* Texture.h */; };
+		6BCC669B1325D1AF00D1CF65 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC0132494F10008B2E7 /* Texture2D.cpp */; };
+		6BCC669C1325D1AF00D1CF65 /* Texture2D.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC1132494F10008B2E7 /* Texture2D.h */; };
+		6BCC669D1325D1AF00D1CF65 /* Thread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC2132494F10008B2E7 /* Thread.cpp */; };
+		6BCC669E1325D1AF00D1CF65 /* Thread.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC3132494F10008B2E7 /* Thread.h */; };
+		6BCC669F1325D1AF00D1CF65 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC4132494F10008B2E7 /* Tools.cpp */; };
+		6BCC66A01325D1AF00D1CF65 /* Tools.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC5132494F10008B2E7 /* Tools.h */; };
+		6BCC66A11325D1AF00D1CF65 /* Vectors.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC6132494F10008B2E7 /* Vectors.h */; };
+		6BCC66A21325D1AF00D1CF65 /* VertexArrayObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC7132494F10008B2E7 /* VertexArrayObject.cpp */; };
+		6BCC66A31325D1AF00D1CF65 /* VertexArrayObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC8132494F10008B2E7 /* VertexArrayObject.h */; };
+		6BCC66A41325D1AF00D1CF65 /* VertexBufferObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CC9132494F10008B2E7 /* VertexBufferObject.cpp */; };
+		6BCC66A51325D1AF00D1CF65 /* VertexBufferObject.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CCA132494F10008B2E7 /* VertexBufferObject.h */; };
+		6BCC66A61325D1AF00D1CF65 /* VertexShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CCB132494F10008B2E7 /* VertexShader.cpp */; };
+		6BCC66A71325D1AF00D1CF65 /* VertexShader.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CCC132494F10008B2E7 /* VertexShader.h */; };
+		6BCC66A81325D1B800D1CF65 /* Asteroid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CCE132494F10008B2E7 /* Asteroid.cpp */; };
+		6BCC66A91325D1B800D1CF65 /* Asteroid.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CCF132494F10008B2E7 /* Asteroid.h */; };
+		6BCC66AA1325D1B800D1CF65 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD0132494F10008B2E7 /* Entity.cpp */; };
+		6BCC66AB1325D1B800D1CF65 /* Entity.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD1132494F10008B2E7 /* Entity.h */; };
+		6BCC66AC1325D1B800D1CF65 /* GameModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD2132494F10008B2E7 /* GameModule.cpp */; };
+		6BCC66AD1325D1B800D1CF65 /* GameModule.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD3132494F10008B2E7 /* GameModule.h */; };
+		6BCC66AE1325D1B800D1CF65 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD4132494F10008B2E7 /* main.cpp */; };
+		6BCC66AF1325D1B800D1CF65 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD5132494F10008B2E7 /* Ship.cpp */; };
+		6BCC66B01325D1B800D1CF65 /* Ship.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD6132494F10008B2E7 /* Ship.h */; };
+		6BCC66B11325D1C100D1CF65 /* GLee.c in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD8132494F10008B2E7 /* GLee.c */; };
+		6BCC66B21325D1C100D1CF65 /* GLee.h in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC1CD9132494F10008B2E7 /* GLee.h */; };
+		6BCC66C41325D31900D1CF65 /* Cocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1CFE132495930008B2E7 /* Cocoa.framework */; };
+		6BCC66C51325D31900D1CF65 /* OpenGL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D00132495930008B2E7 /* OpenGL.framework */; };
+		6BCC66C61325D31900D1CF65 /* SDL_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D02132495930008B2E7 /* SDL_image.framework */; };
+		6BCC66C71325D31900D1CF65 /* SDL_mixer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D04132495930008B2E7 /* SDL_mixer.framework */; };
+		6BCC66C81325D31900D1CF65 /* SDL_ttf.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D08132495930008B2E7 /* SDL_ttf.framework */; };
+		6BCC66C91325D31900D1CF65 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D0A132495930008B2E7 /* SDL.framework */; };
+		6BCC66CA1325D31900D1CF65 /* libcurl.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BCC1D0C132495940008B2E7 /* libcurl.dylib */; };
+		6BCC66CB1325D31900D1CF65 /* SDL_net.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BE48D6B1325CA71006199E2 /* SDL_net.framework */; };
 		6BE48D6C1325CA71006199E2 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE48D6B1325CA71006199E2 /* SDL_net.framework */; };
 		6BE48D741325CAF5006199E2 /* NetworkStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE48D721325CAF5006199E2 /* NetworkStream.cpp */; };
 		8DD76F6A0486A84900D96B5E /* Nullocity.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Nullocity.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6BCC66C01325D1F000D1CF65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = Library/Frameworks;
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		6BCC66C31325D2F100D1CF65 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6BCC66C41325D31900D1CF65 /* Cocoa.framework in CopyFiles */,
+				6BCC66C51325D31900D1CF65 /* OpenGL.framework in CopyFiles */,
+				6BCC66C61325D31900D1CF65 /* SDL_image.framework in CopyFiles */,
+				6BCC66C71325D31900D1CF65 /* SDL_mixer.framework in CopyFiles */,
+				6BCC66C81325D31900D1CF65 /* SDL_ttf.framework in CopyFiles */,
+				6BCC66C91325D31900D1CF65 /* SDL.framework in CopyFiles */,
+				6BCC66CA1325D31900D1CF65 /* libcurl.dylib in CopyFiles */,
+				6BCC66CB1325D31900D1CF65 /* SDL_net.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		8DD76F690486A84900D96B5E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 8;
@@ -144,6 +259,8 @@
 		6BCC1D08132495930008B2E7 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = Library/Frameworks/SDL_ttf.framework; sourceTree = SDKROOT; };
 		6BCC1D0A132495930008B2E7 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = Library/Frameworks/SDL.framework; sourceTree = SDKROOT; };
 		6BCC1D0C132495940008B2E7 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
+		6BCC66031325D10600D1CF65 /* NullApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NullApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BCC66051325D10600D1CF65 /* NullApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NullApp-Info.plist"; sourceTree = "<group>"; };
 		6BE48D6B1325CA71006199E2 /* SDL_net.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_net.framework; path = Library/Frameworks/SDL_net.framework; sourceTree = SDKROOT; };
 		6BE48D721325CAF5006199E2 /* NetworkStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkStream.cpp; sourceTree = "<group>"; };
 		6BE48D731325CAF5006199E2 /* NetworkStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStream.h; sourceTree = "<group>"; };
@@ -152,6 +269,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6BCC66011325D10600D1CF65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BCC66621325D18E00D1CF65 /* Cocoa.framework in Frameworks */,
+				6BCC66631325D18E00D1CF65 /* OpenGL.framework in Frameworks */,
+				6BCC66641325D18E00D1CF65 /* SDL_image.framework in Frameworks */,
+				6BCC66651325D18E00D1CF65 /* SDL_mixer.framework in Frameworks */,
+				6BCC66661325D18E00D1CF65 /* SDL_ttf.framework in Frameworks */,
+				6BCC66671325D18E00D1CF65 /* SDL.framework in Frameworks */,
+				6BCC66681325D18E00D1CF65 /* libcurl.dylib in Frameworks */,
+				6BCC66691325D18E00D1CF65 /* SDL_net.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DD76F660486A84900D96B5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,6 +318,7 @@
 				6BCC1D0A132495930008B2E7 /* SDL.framework */,
 				6BCC1D0C132495940008B2E7 /* libcurl.dylib */,
 				6BE48D6B1325CA71006199E2 /* SDL_net.framework */,
+				6BCC66051325D10600D1CF65 /* NullApp-Info.plist */,
 			);
 			name = Nullocity;
 			sourceTree = "<group>";
@@ -194,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				8DD76F6C0486A84900D96B5E /* Nullocity */,
+				6BCC66031325D10600D1CF65 /* NullApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,6 +446,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6BCC66021325D10600D1CF65 /* NullApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BCC66081325D10700D1CF65 /* Build configuration list for PBXNativeTarget "NullApp" */;
+			buildPhases = (
+				6BCC65FF1325D10600D1CF65 /* Resources */,
+				6BCC66001325D10600D1CF65 /* Sources */,
+				6BCC66011325D10600D1CF65 /* Frameworks */,
+				6BCC66C31325D2F100D1CF65 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NullApp;
+			productName = NullApp;
+			productReference = 6BCC66031325D10600D1CF65 /* NullApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		8DD76F620486A84900D96B5E /* Nullocity */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "Nullocity" */;
@@ -319,6 +471,7 @@
 				8DD76F640486A84900D96B5E /* Sources */,
 				8DD76F660486A84900D96B5E /* Frameworks */,
 				8DD76F690486A84900D96B5E /* CopyFiles */,
+				6BCC66C01325D1F000D1CF65 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -350,11 +503,102 @@
 			projectRoot = "";
 			targets = (
 				8DD76F620486A84900D96B5E /* Nullocity */,
+				6BCC66021325D10600D1CF65 /* NullApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		6BCC65FF1325D10600D1CF65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		6BCC66001325D10600D1CF65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BCC66B11325D1C100D1CF65 /* GLee.c in Sources */,
+				6BCC66B21325D1C100D1CF65 /* GLee.h in Sources */,
+				6BCC66A81325D1B800D1CF65 /* Asteroid.cpp in Sources */,
+				6BCC66A91325D1B800D1CF65 /* Asteroid.h in Sources */,
+				6BCC66AA1325D1B800D1CF65 /* Entity.cpp in Sources */,
+				6BCC66AB1325D1B800D1CF65 /* Entity.h in Sources */,
+				6BCC66AC1325D1B800D1CF65 /* GameModule.cpp in Sources */,
+				6BCC66AD1325D1B800D1CF65 /* GameModule.h in Sources */,
+				6BCC66AE1325D1B800D1CF65 /* main.cpp in Sources */,
+				6BCC66AF1325D1B800D1CF65 /* Ship.cpp in Sources */,
+				6BCC66B01325D1B800D1CF65 /* Ship.h in Sources */,
+				6BCC666C1325D1AF00D1CF65 /* NetworkStream.cpp in Sources */,
+				6BCC666D1325D1AF00D1CF65 /* NetworkStream.h in Sources */,
+				6BCC666E1325D1AF00D1CF65 /* Camera.cpp in Sources */,
+				6BCC666F1325D1AF00D1CF65 /* Camera.h in Sources */,
+				6BCC66701325D1AF00D1CF65 /* ClusterVBO.cpp in Sources */,
+				6BCC66711325D1AF00D1CF65 /* ClusterVBO.h in Sources */,
+				6BCC66721325D1AF00D1CF65 /* CubeMap.cpp in Sources */,
+				6BCC66731325D1AF00D1CF65 /* CubeMap.h in Sources */,
+				6BCC66741325D1AF00D1CF65 /* Download.cpp in Sources */,
+				6BCC66751325D1AF00D1CF65 /* Download.h in Sources */,
+				6BCC66761325D1AF00D1CF65 /* Engine.cpp in Sources */,
+				6BCC66771325D1AF00D1CF65 /* Engine.h in Sources */,
+				6BCC66781325D1AF00D1CF65 /* Exception.cpp in Sources */,
+				6BCC66791325D1AF00D1CF65 /* Exception.h in Sources */,
+				6BCC667A1325D1AF00D1CF65 /* Font.cpp in Sources */,
+				6BCC667B1325D1AF00D1CF65 /* Font.h in Sources */,
+				6BCC667C1325D1AF00D1CF65 /* FragmentShader.cpp in Sources */,
+				6BCC667D1325D1AF00D1CF65 /* FragmentShader.h in Sources */,
+				6BCC667E1325D1AF00D1CF65 /* Graphics.h in Sources */,
+				6BCC667F1325D1AF00D1CF65 /* Image.cpp in Sources */,
+				6BCC66801325D1AF00D1CF65 /* Image.h in Sources */,
+				6BCC66811325D1AF00D1CF65 /* IndexVBO.cpp in Sources */,
+				6BCC66821325D1AF00D1CF65 /* IndexVBO.h in Sources */,
+				6BCC66831325D1AF00D1CF65 /* LuaMachine.cpp in Sources */,
+				6BCC66841325D1AF00D1CF65 /* LuaMachine.h in Sources */,
+				6BCC66851325D1AF00D1CF65 /* ManagedModule.cpp in Sources */,
+				6BCC66861325D1AF00D1CF65 /* ManagedModule.h in Sources */,
+				6BCC66871325D1AF00D1CF65 /* Matrix4x4.h in Sources */,
+				6BCC66881325D1AF00D1CF65 /* Module.cpp in Sources */,
+				6BCC66891325D1AF00D1CF65 /* Module.h in Sources */,
+				6BCC668A1325D1AF00D1CF65 /* Music.cpp in Sources */,
+				6BCC668B1325D1AF00D1CF65 /* Music.h in Sources */,
+				6BCC668C1325D1AF00D1CF65 /* Mutex.cpp in Sources */,
+				6BCC668D1325D1AF00D1CF65 /* Mutex.h in Sources */,
+				6BCC668E1325D1AF00D1CF65 /* Platforms.h in Sources */,
+				6BCC668F1325D1AF00D1CF65 /* Program.h in Sources */,
+				6BCC66901325D1AF00D1CF65 /* PropertyList.cpp in Sources */,
+				6BCC66911325D1AF00D1CF65 /* PropertyList.h in Sources */,
+				6BCC66921325D1AF00D1CF65 /* ResourceManager.h in Sources */,
+				6BCC66931325D1AF00D1CF65 /* Shader.cpp in Sources */,
+				6BCC66941325D1AF00D1CF65 /* Shader.h in Sources */,
+				6BCC66951325D1AF00D1CF65 /* Sound.cpp in Sources */,
+				6BCC66961325D1AF00D1CF65 /* Sound.h in Sources */,
+				6BCC66971325D1AF00D1CF65 /* StopWatch.cpp in Sources */,
+				6BCC66981325D1AF00D1CF65 /* StopWatch.h in Sources */,
+				6BCC66991325D1AF00D1CF65 /* Texture.cpp in Sources */,
+				6BCC669A1325D1AF00D1CF65 /* Texture.h in Sources */,
+				6BCC669B1325D1AF00D1CF65 /* Texture2D.cpp in Sources */,
+				6BCC669C1325D1AF00D1CF65 /* Texture2D.h in Sources */,
+				6BCC669D1325D1AF00D1CF65 /* Thread.cpp in Sources */,
+				6BCC669E1325D1AF00D1CF65 /* Thread.h in Sources */,
+				6BCC669F1325D1AF00D1CF65 /* Tools.cpp in Sources */,
+				6BCC66A01325D1AF00D1CF65 /* Tools.h in Sources */,
+				6BCC66A11325D1AF00D1CF65 /* Vectors.h in Sources */,
+				6BCC66A21325D1AF00D1CF65 /* VertexArrayObject.cpp in Sources */,
+				6BCC66A31325D1AF00D1CF65 /* VertexArrayObject.h in Sources */,
+				6BCC66A41325D1AF00D1CF65 /* VertexBufferObject.cpp in Sources */,
+				6BCC66A51325D1AF00D1CF65 /* VertexBufferObject.h in Sources */,
+				6BCC66A61325D1AF00D1CF65 /* VertexShader.cpp in Sources */,
+				6BCC66A71325D1AF00D1CF65 /* VertexShader.h in Sources */,
+				6BCC666A1325D19A00D1CF65 /* SDLMain.h in Sources */,
+				6BCC666B1325D19A00D1CF65 /* SDLMain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DD76F640486A84900D96B5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +716,56 @@
 			};
 			name = Release;
 		};
+		6BCC66061325D10700D1CF65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "NullApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-llua",
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = NullApp;
+			};
+			name = Debug;
+		};
+		6BCC66071325D10700D1CF65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "NullApp-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-llua",
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = NullApp;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -489,6 +783,15 @@
 			buildConfigurations = (
 				1DEB923608733DC60010E9CD /* Debug */,
 				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BCC66081325D10700D1CF65 /* Build configuration list for PBXNativeTarget "NullApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BCC66061325D10700D1CF65 /* Debug */,
+				6BCC66071325D10700D1CF65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
