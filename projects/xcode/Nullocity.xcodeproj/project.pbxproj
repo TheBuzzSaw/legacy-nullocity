@@ -47,6 +47,8 @@
 		6BCC1D09132495930008B2E7 /* SDL_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D08132495930008B2E7 /* SDL_ttf.framework */; };
 		6BCC1D0B132495930008B2E7 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0A132495930008B2E7 /* SDL.framework */; };
 		6BCC1D0D132495940008B2E7 /* libcurl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC1D0C132495940008B2E7 /* libcurl.dylib */; };
+		6BE48D6C1325CA71006199E2 /* SDL_net.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE48D6B1325CA71006199E2 /* SDL_net.framework */; };
+		6BE48D741325CAF5006199E2 /* NetworkStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BE48D721325CAF5006199E2 /* NetworkStream.cpp */; };
 		8DD76F6A0486A84900D96B5E /* Nullocity.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* Nullocity.1 */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,9 @@
 		6BCC1D08132495930008B2E7 /* SDL_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_ttf.framework; path = Library/Frameworks/SDL_ttf.framework; sourceTree = SDKROOT; };
 		6BCC1D0A132495930008B2E7 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = Library/Frameworks/SDL.framework; sourceTree = SDKROOT; };
 		6BCC1D0C132495940008B2E7 /* libcurl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.dylib; path = usr/lib/libcurl.dylib; sourceTree = SDKROOT; };
+		6BE48D6B1325CA71006199E2 /* SDL_net.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_net.framework; path = Library/Frameworks/SDL_net.framework; sourceTree = SDKROOT; };
+		6BE48D721325CAF5006199E2 /* NetworkStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkStream.cpp; sourceTree = "<group>"; };
+		6BE48D731325CAF5006199E2 /* NetworkStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStream.h; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* Nullocity */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Nullocity; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* Nullocity.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Nullocity.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +163,7 @@
 				6BCC1D09132495930008B2E7 /* SDL_ttf.framework in Frameworks */,
 				6BCC1D0B132495930008B2E7 /* SDL.framework in Frameworks */,
 				6BCC1D0D132495940008B2E7 /* libcurl.dylib in Frameworks */,
+				6BE48D6C1325CA71006199E2 /* SDL_net.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,7 @@
 				6BCC1D08132495930008B2E7 /* SDL_ttf.framework */,
 				6BCC1D0A132495930008B2E7 /* SDL.framework */,
 				6BCC1D0C132495940008B2E7 /* libcurl.dylib */,
+				6BE48D6B1325CA71006199E2 /* SDL_net.framework */,
 			);
 			name = Nullocity;
 			sourceTree = "<group>";
@@ -205,6 +212,8 @@
 		6BCC1C90132494F10008B2E7 /* CGE */ = {
 			isa = PBXGroup;
 			children = (
+				6BE48D721325CAF5006199E2 /* NetworkStream.cpp */,
+				6BE48D731325CAF5006199E2 /* NetworkStream.h */,
 				6BCC1C91132494F10008B2E7 /* Camera.cpp */,
 				6BCC1C92132494F10008B2E7 /* Camera.h */,
 				6BCC1C93132494F10008B2E7 /* ClusterVBO.cpp */,
@@ -383,6 +392,7 @@
 				6BCC1CF9132494F10008B2E7 /* Ship.cpp in Sources */,
 				6BCC1CFA132494F10008B2E7 /* GLee.c in Sources */,
 				6BCC1CFD132495410008B2E7 /* SDLMain.m in Sources */,
+				6BE48D741325CAF5006199E2 /* NetworkStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,7 @@
 #include "Sound.h"
 
 #include <SDL_ttf.h>
-//#include <SDL_net.h>
+#include <SDL_net.h>
 #include <SDL_mixer.h>
 
 #include <ctime>
@@ -87,7 +87,7 @@ namespace CGE
         }
 
         if (mSettings.sound) Mix_CloseAudio();
-        //SDLNet_Quit();
+        SDLNet_Quit();
         TTF_Quit();
         SDL_Quit();
 		
@@ -233,11 +233,11 @@ namespace CGE
         }
 
 		// SDL_net temporarily disabled due to OSX
-        //if (SDLNet_Init() == -1)
+        if (SDLNet_Init() == -1)
         {
-            //cerr << "-- error on SDLNet_Init -- " << SDLNet_GetError() << endl;
-            //fout.close();
-            //exit(1);
+            cerr << "-- error on SDLNet_Init -- " << SDLNet_GetError() << endl;
+            fout.close();
+            exit(1);
         }
 
         if (mSettings.sound)
