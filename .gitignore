@@ -4,6 +4,8 @@
 /projects/*.cbTemp
 /projects/obj/
 /projects/xcode/build/
+/projects/xcode/Nullocity.xcodeproj/*.mode1v3
+/projects/xcode/Nullocity.xcodeproj/*.pbxuser
 data/logs/init.txt
 *.dll
 *.exe
