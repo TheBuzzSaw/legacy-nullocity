@@ -14,9 +14,6 @@
 #include <string>
 #include <list>
 
-#include <stdio.h>
-#include <stdlib.h>
-
 namespace CGE
 {
     using namespace std;
@@ -90,7 +87,7 @@ namespace CGE
         SDLNet_Quit();
         TTF_Quit();
         SDL_Quit();
-		
+
 #ifdef __APPLE__
 		exit(0); // The program will not die for some reason...
 #endif
@@ -304,7 +301,7 @@ namespace CGE
 
 #ifndef __APPLE__
         // OSX does not support window icons
-        if (mSettings.iconPath)
+        if (mSettings.iconPath && *mSettings.iconPath)
         {
             try
             {

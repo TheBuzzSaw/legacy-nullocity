@@ -34,13 +34,15 @@ void Entity::onCollision(Entity& inEntity, int recurse)
     float nx = (inEntity.mPosition[0] - mPosition[0]) / d;
     float ny = (inEntity.mPosition[1] - mPosition[1]) / d;
     //float n = sqrt(nx * nx + ny * ny);
-    float p = 2 * (mVelocity[0] * nx + mVelocity[1] * ny - inEntity.mVelocity[0] * nx - inEntity.mVelocity[1] * ny) / (mMass + inEntity.mMass);
+    float p = 2 * (mVelocity[0] * nx + mVelocity[1] * ny
+        - inEntity.mVelocity[0] * nx - inEntity.mVelocity[1] * ny)
+        / (mMass + inEntity.mMass);
 
     if (recurse)
         inEntity.onCollision((*this), 0);
 
-    mVelocity[0] = mVelocity[0] - p * inEntity.mMass * nx;
-    mVelocity[1] = mVelocity[1] - p * inEntity.mMass * ny;
+    mVelocity[0] -= p * inEntity.mMass * nx;
+    mVelocity[1] -= p * inEntity.mMass * ny;
 
 }
 
