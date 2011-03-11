@@ -241,16 +241,13 @@ void GameModule::checkCollisions()
 
         for (; j != mEntities.end(); ++j)
         {
-            if (i != j)
+            float a = (*i)->getPosX() - (*j)->getPosX();
+            float b = (*i)->getPosY() - (*j)->getPosY();
+            float dist = sqrt(a * a + b * b);
+            float collisionDist = (*i)->getRadius() + (*j)->getRadius();
+            if (dist <= collisionDist)
             {
-                float a = (*i)->getPosX() - (*j)->getPosX();
-                float b = (*i)->getPosY() - (*j)->getPosY();
-                float dist = sqrt(a * a + b * b);
-                float collisionDist = (*i)->getRadius() + (*j)->getRadius();
-                if (dist <= collisionDist)
-                {
-                    (*i)->onCollision(**j);
-                }
+                Entity::collide(**i,**j);
             }
         }
     }

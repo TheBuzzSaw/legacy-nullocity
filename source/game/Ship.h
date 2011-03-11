@@ -14,6 +14,7 @@ class Ship : public Entity
 
         virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
         virtual void onPulse();
+        virtual void onDeath();
 
         void fire();
 

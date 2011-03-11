@@ -16,7 +16,9 @@ class Entity
         virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix) = 0;
         virtual void onPulse();
         virtual void onDeath(); // when HP hit zero
-        virtual void onCollision(Entity& inEntity, int recurse = 1);
+        virtual void onCollision();
+
+        static void collide(Entity& objectOne, Entity& objectTwo);
 
         inline float getRadius() { return mRadius; }
         inline float getPosX() { return mPosition[0]; }

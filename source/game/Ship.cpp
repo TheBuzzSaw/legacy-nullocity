@@ -68,6 +68,9 @@ Ship::Ship()
 
     mRadius = 1.0f;
 
+    mMaxHP = 1;
+    mHP = mMaxHP;
+
     mDeltaRoll = 2;
     mRoll = 0;
     mScale = 1;
@@ -141,6 +144,12 @@ void Ship::onPulse()
     }
 
     Entity::onPulse();
+}
+
+void Ship::onDeath()
+{
+    cout << "Ship Dead";
+    cout.flush();
 }
 
 void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
