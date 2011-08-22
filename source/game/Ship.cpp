@@ -68,8 +68,8 @@ Ship::Ship()
 
     mRadius = 1.0f;
 
-    mMaxHP = 1;
-    mHP = mMaxHP;
+//    mMaxHP = 1;
+//    mHP = mMaxHP;
 
     mDeltaRoll = 2;
     mRoll = 0;

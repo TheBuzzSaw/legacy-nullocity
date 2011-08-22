@@ -1,7 +1,6 @@
 #include "Entity.h"
 
-Entity::Entity() : mMass(0.0f), mRotation(0.0f), mRadius(0.0f), mHP(0),
-    mMaxHP(0)
+Entity::Entity() : mMass(0.0f), mRotation(0.0f), mRadius(0.0f)
 {
     mPosition[0] = 0.0f;
     mPosition[1] = 0.0f;
@@ -19,10 +18,10 @@ void Entity::onPulse()
     mPosition[0] += mVelocity[0];
     mPosition[1] += mVelocity[1];
 
-    if (mMaxHP && !mHP)
-    {
-        onDeath();
-    }
+//    if (mMaxHP && !mHP)
+//    {
+//        onDeath();
+//    }
 }
 
 void Entity::onDeath()
@@ -34,8 +33,8 @@ void Entity::onDeath()
 void Entity::onCollision()
 {
     //do damage based on mass and velocity
-    if (mMaxHP && ! mHP)
-        mHP--; //test code, remove when ready
+    //if (mMaxHP && ! mHP)
+    //    mHP--; //test code, remove when ready
 }
 
 void Entity::collide(Entity& objectOne, Entity& objectTwo)

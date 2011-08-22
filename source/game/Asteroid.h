@@ -2,11 +2,8 @@
 #define ASTEROID_H
 
 #include <GLee/GLee.h>
-
 #include <CGE/IndexVBO.h>
-
 #include "Entity.h"
-
 
 class Asteroid : public Entity
 {

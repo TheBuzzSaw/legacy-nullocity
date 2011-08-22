@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="..\nullocity-ubu64-debug" prefix_auto="1" extension_auto="1" />
+				<Option output="..\nullocity-win32-debug" prefix_auto="1" extension_auto="1" />
 				<Option working_dir=".." />
 				<Option object_output="obj\Debug\" />
 				<Option type="1" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="..\nullocity-ubu64" prefix_auto="1" extension_auto="1" />
+				<Option output="..\nullocity-win32" prefix_auto="1" extension_auto="1" />
 				<Option working_dir=".." />
 				<Option object_output="obj\Release\" />
 				<Option type="1" />
@@ -37,15 +37,16 @@
 			<Add directory="..\source" />
 		</Compiler>
 		<Linker>
+			<Add library="mingw32" />
 			<Add library="SDLmain" />
 			<Add library="SDL_image" />
 			<Add library="SDL_net" />
 			<Add library="SDL_mixer" />
 			<Add library="SDL_ttf" />
 			<Add library="SDL" />
-			<Add library="GL" />
+			<Add library="opengl32" />
 			<Add library="lua5.1" />
-			<Add library="curl" />
+			<Add library="curldll" />
 		</Linker>
 		<Unit filename="..\source\CGE\Camera.cpp" />
 		<Unit filename="..\source\CGE\Camera.h" />
@@ -113,6 +114,8 @@
 		<Unit filename="..\source\GLee\GLee.h" />
 		<Unit filename="..\source\game\Asteroid.cpp" />
 		<Unit filename="..\source\game\Asteroid.h" />
+		<Unit filename="..\source\game\Bullet.cpp" />
+		<Unit filename="..\source\game\Bullet.h" />
 		<Unit filename="..\source\game\Entity.cpp" />
 		<Unit filename="..\source\game\Entity.h" />
 		<Unit filename="..\source\game\GameModule.cpp" />
