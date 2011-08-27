@@ -120,6 +120,8 @@
 		<Unit filename="..\source\game\Entity.h" />
 		<Unit filename="..\source\game\GameModule.cpp" />
 		<Unit filename="..\source\game\GameModule.h" />
+		<Unit filename="..\source\game\SceneGraphNode.cpp" />
+		<Unit filename="..\source\game\SceneGraphNode.h" />
 		<Unit filename="..\source\game\Ship.cpp" />
 		<Unit filename="..\source\game\Ship.h" />
 		<Unit filename="..\source\game\main.cpp" />

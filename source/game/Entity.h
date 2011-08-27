@@ -5,9 +5,10 @@
 #include <CGE/Matrix4x4.h>
 #include <CGE/Vectors.h>
 #include <iostream>
+#include "SceneGraphNode.h"
 using namespace std;
 
-class Entity
+class Entity : public SceneGraphNode
 {
     public:
         Entity();
