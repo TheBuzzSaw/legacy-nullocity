@@ -74,7 +74,7 @@ void GameModule::onLoop()
     list<Entity*>::iterator iter;
     for (iter = mEntities.begin(); iter != mEntities.end(); iter++)
     {
-        (*iter)->render(mModelView);
+        (*iter)->display(mModelView);
     }
 }
 

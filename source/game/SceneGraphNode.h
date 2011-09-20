@@ -1,6 +1,7 @@
 #ifndef SCENEGRAPHNODE_H
 #define SCENEGRAPHNODE_H
 
+#include <CGE/Graphics.h>
 #include <CGE/Matrix4x4.h>
 
 #include <list>
@@ -11,7 +12,7 @@ class SceneGraphNode
         SceneGraphNode();
         virtual ~SceneGraphNode();
 
-        virtual void display();
+        virtual void display(const CGE::Matrix4x4<GLfloat>& inMatrix);
 
         void addChildNode(SceneGraphNode& inNode);
         void removeChildNode(SceneGraphNode& inNode);

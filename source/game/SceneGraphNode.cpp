@@ -14,7 +14,7 @@ SceneGraphNode::~SceneGraphNode()
     }
 }
 
-void SceneGraphNode::display()
+void SceneGraphNode::display(const CGE::Matrix4x4<GLfloat>& inMatrix)
 {
 }
 

@@ -1,9 +1,8 @@
 #include <GLee/GLee.h>
 #include <cmath>
 #include <CGE/Sound.h>
-#include <CGE/IndexVBO.h>
 #include "Entity.h"
-#include "iostream"
+
 using namespace std;
 
 class Ship : public Entity
@@ -12,7 +11,6 @@ class Ship : public Entity
         Ship();
         ~Ship();
 
-        virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix);
         virtual void onPulse();
         virtual void onDeath();
 
@@ -41,12 +39,6 @@ class Ship : public Entity
         float mMaxTurnSpeed;
 
         vec2f mForce;
-
-        int mRoll;
         int mDeltaRoll;
-        float mScale;
         CGE::Sound weaponSound;
-        CGE::VertexBufferObject mVertexVBO;
-        CGE::IndexVBO mIVBO;
-        CGE::VertexBufferObject mColorVBO;
 };

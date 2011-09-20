@@ -1,10 +1,10 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include <CGE/Graphics.h>
 #include <CGE/Matrix4x4.h>
 #include <CGE/Vectors.h>
 #include <iostream>
+#include <CGE/IndexVBO.h>
 #include "SceneGraphNode.h"
 using namespace std;
 
@@ -14,7 +14,7 @@ class Entity : public SceneGraphNode
         Entity();
         virtual ~Entity();
 
-        virtual void render(const CGE::Matrix4x4<GLfloat>& inMatrix) = 0;
+        virtual void display(const CGE::Matrix4x4<GLfloat>& inMatrix);
         virtual void onPulse();
         virtual void onDeath(); // when HP hit zero
         virtual void onCollision();
@@ -38,6 +38,14 @@ class Entity : public SceneGraphNode
 
         float mRotation; // Z-rotation
         float mRadius; // "size" of object
+
+        int mRoll; // roll of an object
+        float mScale; // scale of an object
+
+        //stuff for display
+        CGE::VertexBufferObject mVertexVBO;
+        CGE::IndexVBO mIVBO;
+        CGE::VertexBufferObject mColorVBO;
 
   //      unsigned int mHP;
   //      unsigned int mMaxHP;

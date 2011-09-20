@@ -152,30 +152,6 @@ void Ship::onDeath()
     cout.flush();
 }
 
-void Ship::render(const CGE::Matrix4x4<GLfloat>& inMatrix)
-{
-    CGE::Matrix4x4<GLfloat> matrix(inMatrix);
-    matrix.translate(mPosition[0], mPosition[1], 0.0f);
-    matrix.rotateZ(mRotation - 90.0f);
-    matrix.rotateY(mRoll);
-    matrix.scale(mScale);
-    glLoadMatrixf(matrix);
-
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-
-    mVertexVBO.bind();
-    glVertexPointer(3, GL_FLOAT, 0, 0);
-
-    mColorVBO.bind();
-    glColorPointer(4, GL_FLOAT, 0, 0);
-
-    mIVBO.draw();
-
-    glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_VERTEX_ARRAY);
-}
-
 void Ship::fire()
 {
     cout << "Ima firin mah Lazer!!!!!";

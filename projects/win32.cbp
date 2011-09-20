@@ -124,6 +124,8 @@
 		<Unit filename="..\source\game\SceneGraphNode.h" />
 		<Unit filename="..\source\game\Ship.cpp" />
 		<Unit filename="..\source\game\Ship.h" />
+		<Unit filename="..\source\game\ViewNode.cpp" />
+		<Unit filename="..\source\game\ViewNode.h" />
 		<Unit filename="..\source\game\main.cpp" />
 		<Extensions>
 			<code_completion />
